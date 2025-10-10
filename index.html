@@ -1,294 +1,510 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kaung Min Khant | Robotics & Data Analytics Portfolio</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kaung Min Khant | Robotics & Data Analytics Portfolio</title>
 
-  <!-- ===== META TAGS ===== -->
-  <meta name="description" content="Portfolio of Kaung Min Khant — Robotics Engineer & Data Analyst. Explore projects in robotics, AI, and data analytics." />
-  <meta name="keywords" content="Kaung Min Khant, Robotics Engineer, Data Analyst, Portfolio, ROS, Power BI, Python, SQL" />
-  <meta name="author" content="Kaung Min Khant" />
-  <meta property="og:title" content="Kaung Min Khant | Robotics & Data Analytics Portfolio" />
-  <meta property="og:description" content="Explore my projects in Robotics and Data Analytics — from AI-driven automation to business insights." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://kaungminkhant.vercel.app" />
-  <meta property="og:image" content="https://kaungminkhant.vercel.app/preview.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Kaung Min Khant | Robotics & Data Analytics Portfolio" />
-  <meta name="twitter:description" content="Explore my work in robotics, AI, and data analytics." />
-  <meta name="twitter:image" content="https://kaungminkhant.vercel.app/preview.png" />
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <!-- ===== META TAGS ===== -->
+    <meta name="description" content="Portfolio of Kaung Min Khant — Robotics Engineer & Data Analyst. Explore projects in robotics, AI, and data analytics." />
+    <meta name="author" content="Kaung Min Khant" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
 
-  <!-- ===== STYLE ===== -->
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+    <!-- Lucide Icons for professionalism -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background-color: #1a1f25; /* charcoal dark */
-      color: #e6edf3;
-      line-height: 1.6;
-    }
+    <!-- ===== STYLE: PROFESSIONAL DARK THEME & VISUAL SKILLS ===== -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
-    a { color: #00bfa6; text-decoration: none; }
+        /* CSS Variables for a stable dark theme */
+        :root {
+            --bg-main: #0D1117; 
+            --bg-nav: #161B22;
+            --bg-card: #161B22; 
+            --text-main: #e6edf3;
+            --text-muted: #8b949e;
+            --accent-blue: #58a6ff;
+            --accent-teal: #00bfa6;
+            --border-color: #21262d;
+        }
 
-    h1, h2, h3 {
-      color: #58a6ff;
-      margin-bottom: 0.5em;
-    }
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
 
-    section {
-      max-width: 900px;
-      margin: 60px auto;
-      padding: 0 20px;
-      transition: opacity 0.5s ease;
-    }
+        a { color: var(--accent-teal); text-decoration: none; transition: color 0.3s ease; }
+        a:hover { color: var(--accent-blue); }
 
-    .center { text-align: center; }
+        h1, h2, h3 {
+            color: var(--accent-blue);
+            margin-bottom: 0.5em;
+        }
+        
+        h2 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid var(--border-color);
+            margin-top: 40px;
+        }
 
-    nav {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #161b22;
-      padding: 15px 40px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.4);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
+        section {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 0 20px;
+            transition: opacity 0.5s ease;
+        }
 
-    nav h1 { font-size: 1.4rem; color: #00bfa6; }
+        .center { text-align: center; }
 
-    .hero-btn {
-      background: linear-gradient(90deg, #007bff, #00bfa6);
-      color: white;
-      border: none;
-      border-radius: 8px;
-      padding: 10px 20px;
-      cursor: pointer;
-      font-size: 1rem;
-      transition: transform 0.2s ease, opacity 0.3s ease;
-    }
+        /* --- STICKY NAVIGATION --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--bg-nav);
+            padding: 15px 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        nav h1 { font-size: 1.4rem; color: var(--accent-teal); margin: 0; }
+        nav a { color: var(--text-main); margin-left: 20px; }
+        nav a:hover { color: var(--accent-teal); }
 
-    .hero-btn:hover {
-      transform: scale(1.05);
-      opacity: 0.9;
-    }
+        /* --- HERO BUTTONS --- */
+        .hero-btn {
+            background: var(--accent-blue);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 5px;
+            transition: transform 0.2s ease, opacity 0.3s ease, background 0.3s ease;
+        }
+        .hero-btn:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+        .hero-btn.active {
+            background: var(--accent-teal);
+            border: 2px solid var(--accent-blue);
+            transform: scale(1.03); 
+            box-shadow: 0 0 15px rgba(0, 191, 166, 0.5);
+        }
 
-    .card {
-      background: #21262d;
-      border-radius: 10px;
-      padding: 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-      transition: transform 0.2s ease, box-shadow 0.3s ease;
-    }
+        /* --- CARD STYLES --- */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-top: 3px solid var(--accent-blue); /* Accent line */
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px; /* Increased margin */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 191, 166, 0.2); /* Teal glow on hover */
+        }
 
-    .card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-    }
+        /* --- PROJECT EXPANSION (CUSTOM ACCORDION) --- */
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            padding: 5px 0;
+            margin-bottom: 10px;
+        }
+        .project-title {
+            color: var(--accent-blue);
+            margin: 0;
+            font-weight: 600;
+        }
+        .project-toggle-icon {
+            transition: transform 0.3s ease;
+        }
+        .project-content {
+            overflow: hidden;
+            transition: max-height 0.4s ease-in-out;
+            max-height: 0; /* Initially hidden */
+        }
+        .project-content p, .project-links {
+            padding: 5px 0;
+            border-top: 1px dashed var(--border-color);
+            margin-top: 10px;
+        }
+        .project-links a {
+            margin-right: 15px;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
 
-    .skills-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .skill-tag {
-      background: #2d333b;
-      border-radius: 20px;
-      padding: 6px 14px;
-      font-size: 0.9rem;
-      color: #00bfa6;
-    }
-
-    button.cv-btn {
-      background: linear-gradient(90deg, #007bff, #00bfa6);
-      color: white;
-      border: none;
-      border-radius: 6px;
-      padding: 12px 22px;
-      cursor: pointer;
-      font-size: 1rem;
-      margin-top: 15px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.3);
-      transition: transform 0.2s ease, opacity 0.3s ease;
-    }
-
-    button.cv-btn:hover { transform: scale(1.05); opacity: 0.9; }
-
-    footer {
-      text-align: center;
-      padding: 25px;
-      background: #161b22;
-      margin-top: 60px;
-      color: #8b949e;
-      font-size: 0.9rem;
-    }
-
-    .fade-out { opacity: 0; }
-  </style>
+        /* --- SKILLS VISUALIZATION --- */
+        .skills-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .skill-bar-container {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 15px;
+            align-items: center;
+        }
+        .skill-name {
+            font-weight: 600;
+            color: var(--accent-teal);
+            font-size: 0.95rem;
+        }
+        .skill-bar {
+            background: var(--border-color);
+            height: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .skill-bar-fill {
+            height: 100%;
+            background: var(--accent-blue);
+            transition: width 1s ease-out;
+        }
+        
+        /* --- FOOTER & MISC --- */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: var(--bg-nav);
+            margin-top: 60px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        .fade-out { opacity: 0; }
+        
+        /* --- MOBILE RESPONSIVENESS --- */
+        @media (max-width: 768px) {
+            nav { flex-direction: column; padding: 10px 20px; }
+            nav h1 { margin-bottom: 10px; }
+            nav div a { margin: 0 8px; font-size: 0.9rem; }
+            section { margin: 40px auto; }
+            .hero-btn { display: block; width: 100%; margin: 10px 0; }
+            .skill-bar-container { grid-template-columns: 100px 1fr; }
+        }
+    </style>
 </head>
 <body>
 
-  <!-- ===== NAV ===== -->
-  <nav><h1>Kaung Min Khant</h1></nav>
+    <!-- Nav Bar -->
+    <nav>
+        <h1>Kaung Min Khant</h1>
+        <div>
+            <a href="#summary">Summary</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#certs">Education</a>
+        </div>
+    </nav>
 
-  <!-- ===== HERO ===== -->
-  <section class="center">
-    <h1>Hi, I’m Kaung Min Khant</h1>
-    <p><em>Robotics Engineer & Data Analyst</em></p>
-    <p style="max-width:600px; margin:10px auto;">
-      Explore both sides of my work — you can switch between my <strong>Robotics</strong> and <strong>Data Analytics</strong> profiles below to see different projects and skills.
-    </p>
+    <!-- HERO SECTION -->
+    <section class="center" id="hero">
+        <h1 style="font-size: 2.5rem;">Hi, I’m Kaung Min Khant</h1>
+        <p><em>Robotics Engineer & Data Analyst</em></p>
+        <p style="max-width:600px; margin:10px auto; color: var(--text-muted);">
+            Explore both sides of my work — switch between my **Robotics** and **Data Analytics** profiles to see different projects and skills.
+        </p>
 
-    <div style="margin-top:20px;">
-      <button class="hero-btn" id="roboticsBtn">🤖 View Robotics Profile</button>
-      <button class="hero-btn" id="dataBtn">📊 View Data Analyst Profile</button>
-    </div>
+        <div style="margin-top:20px;">
+            <button class="hero-btn" id="roboticsBtn">🤖 View Robotics Profile</button>
+            <button class="hero-btn" id="dataBtn">📊 View Data Analyst Profile</button>
+        </div>
 
-    <p style="margin-top:15px;">
-      <a href="mailto:kaungmin3112002@gmail.com">📧 kaungmin3112002@gmail.com</a> |
-      <a href="https://www.linkedin.com/in/kaungminkhant/">LinkedIn</a> |
-      <a href="https://github.com/Kaung31">GitHub</a>
-    </p>
-  </section>
+        <p style="margin-top:20px; font-size: 0.95rem;">
+            <a href="mailto:kaungmin3112002@gmail.com">
+                <i data-lucide="mail" style="width: 16px; height: 16px;"></i> kaungmin3112002@gmail.com
+            </a> 
+            <span style="color: var(--border-color);">|</span>
+            <a href="https://www.linkedin.com/in/kaungminkhant/">
+                <i data-lucide="linkedin" style="width: 16px; height: 16px;"></i> LinkedIn
+            </a> 
+            <span style="color: var(--border-color);">|</span>
+            <a href="https://github.com/Kaung31">
+                <i data-lucide="github" style="width: 16px; height: 16px;"></i> GitHub
+            </a>
+        </p>
+    </section>
 
-  <!-- ===== PROFILE SUMMARY ===== -->
-  <section>
-    <h2>Profile Summary</h2>
-    <p id="profileSummary"></p>
-  </section>
+    <!-- PROFILE SUMMARY -->
+    <section id="summary">
+        <h2><i data-lucide="user-check"></i> Profile Summary</h2>
+        <p id="profileSummary"></p>
+    </section>
 
-  <!-- ===== PROJECTS ===== -->
-  <section>
-    <h2>Projects</h2>
-    <div id="projectList"></div>
-  </section>
+    <!-- PROJECTS -->
+    <section id="projects">
+        <h2><i data-lucide="hard-hat"></i> Key Projects</h2>
+        <div id="projectList"></div>
+    </section>
 
-  <!-- ===== SKILLS ===== -->
-  <section>
-    <h2>Technical Skills</h2>
-    <div id="skillList"></div>
-  </section>
+    <!-- TECHNICAL SKILLS -->
+    <section id="skills">
+        <h2><i data-lucide="code"></i> Technical Skills</h2>
+        <div id="skillList"></div>
+    </section>
 
-  <!-- ===== SOFT SKILLS ===== -->
-  <section>
-    <h2>Soft & Language Skills</h2>
-    <div class="skills-group">
-      <span class="skill-tag">Critical Thinking</span>
-      <span class="skill-tag">Problem Solving</span>
-      <span class="skill-tag">Team Leadership</span>
-      <span class="skill-tag">English (Fluent)</span>
-      <span class="skill-tag">Chinese (Fluent)</span>
-    </div>
-  </section>
+    <!-- SOFT SKILLS (Static) -->
+    <section id="soft-skills">
+        <h2><i data-lucide="briefcase"></i> Soft & Language Skills</h2>
+        <div class="skills-group" style="flex-direction: row; gap: 15px;">
+            <span class="skill-tag">Critical Thinking</span>
+            <span class="skill-tag">Problem Solving</span>
+            <span class="skill-tag">Team Leadership</span>
+            <span class="skill-tag">English (Fluent)</span>
+            <span class="skill-tag">Chinese (Fluent)</span>
+        </div>
+    </section>
 
-  <!-- ===== CERTIFICATES ===== -->
-  <section>
-    <h2>Education & Certificates</h2>
-    <div id="certList"></div>
-  </section>
+    <!-- EDUCATION & CERTIFICATES -->
+    <section id="certs">
+        <h2><i data-lucide="graduation-cap"></i> Education & Certificates</h2>
+        <div id="certList"></div>
+    </section>
 
-  <section class="center">
-    <button class="cv-btn" id="cvBtn">Download Robotics CV</button>
-  </section>
+    <!-- DOWNLOAD CV BUTTON -->
+    <section class="center">
+        <button class="cv-btn" id="cvBtn">Download Robotics CV</button>
+    </section>
 
-  <footer>
-    © 2025 Kaung Min Khant | Built & Deployed on Vercel
-  </footer>
+    <!-- FOOTER -->
+    <footer>
+        <p style="margin-bottom: 5px;">© 2025 Kaung Min Khant | Built with HTML, JS, & Deployed on Vercel</p>
+        <p style="font-size: 0.8rem;">Icons by Lucide.</p>
+    </footer>
 
-  <script>
-    const roboticsData = {
-      summary: "Robotics Engineer passionate about intelligent automation and computer vision. Skilled in ROS, C++, and embedded systems for real-time robotics, including fatigue detection, vehicle recognition, and robotic arm control.",
-      cv: "Robotics_CV.pdf",
-      projects: [
-        { name: "Driver Fatigue Detection", tools: "Python, MediaPipe, OpenCV, ROS" },
-        { name: "Vehicle Detection with YOLOv8", tools: "Python, OpenCV, Ultralytics, Streamlit" },
-        { name: "AL5D Robotic Arm Automation", tools: "Arduino, C++" },
-        { name: "Localization & Mapping", tools: "ROS, Gazebo, MATLAB" },
-        { name: "NAO Robot for Bubble Tea Shop", tools: "Python, Choregraphe" },
-        { name: "ArUco Pattern Classification", tools: "MATLAB, Deep Learning" },
-        { name: "Micromouse Robotics Challenge", tools: "STM32, C++" }
-      ],
-      skills: {
-        "Programming": ["Python", "C++", "MATLAB"],
-        "Frameworks & Simulation": ["ROS", "Gazebo", "OpenCV", "PyTorch", "TensorFlow"],
-        "Embedded Systems": ["Arduino", "STM32", "Microcontrollers"],
-        "Control & Perception": ["Computer Vision", "Sensor Fusion", "Motion Planning", "PID Control"],
-        "Tools": ["Git", "VS Code", "MATLAB Simulink"]
-      },
-      certs: [
-        "BEng (Hons) Robotics Engineering, University of West of England (First Class Honours)",
-        "Grade 10 (Myanmar) — 3 Distinctions: Maths, Physics, Chemistry"
-      ]
-    };
+    <script>
+        // --- DATA STRUCTURES ---
+        const roboticsData = {
+            summary: "Robotics Engineer passionate about intelligent automation and computer vision. Skilled in ROS, C++, and embedded systems for real-time robotics, including fatigue detection, vehicle recognition, and robotic arm control.",
+            cv: "Robotics_CV.pdf",
+            projects: [
+                { 
+                    name: "Driver Fatigue Detection", 
+                    tools: "Python, MediaPipe, OpenCV, ROS", 
+                    description: "Developed a real-time system using computer vision to monitor driver alertness based on eye-opening ratio (EAR) and head pose estimation. Integrated the solution with ROS for autonomous vehicle safety applications.",
+                    github: "https://github.com/Kaung31/Driver-Fatigue-Detection", live: null
+                },
+                { 
+                    name: "Vehicle Detection with YOLOv8", 
+                    tools: "Python, OpenCV, Ultralytics, Streamlit",
+                    description: "Implemented YOLOv8 for accurate, real-time vehicle and pedestrian detection from surveillance footage. Created an interactive dashboard with Streamlit for easy demonstration and data visualization.",
+                    github: "https://github.com/Kaung31/YOLOv8-Vehicle-Detector", live: null
+                },
+                { 
+                    name: "AL5D Robotic Arm Automation", 
+                    tools: "Arduino, C++",
+                    description: "Designed inverse kinematics solutions and implemented C++ code on an Arduino microcontroller to automate pick-and-place tasks with high precision for small-scale manufacturing simulation.",
+                    github: "https://github.com/Kaung31/AL5D-Arm-Control", live: null
+                },
+                { 
+                    name: "Localization & Mapping", 
+                    tools: "ROS, Gazebo, MATLAB", 
+                    description: "Simulated and tested various SLAM algorithms within a Gazebo environment to accurately map and localize a virtual mobile robot.", github: null, live: null 
+                },
+            ],
+            skills: {
+                "Programming": [
+                    { name: "Python", proficiency: 90 },
+                    { name: "C++", proficiency: 85 },
+                    { name: "MATLAB", proficiency: 70 }
+                ],
+                "Frameworks & Simulation": [
+                    { name: "ROS", proficiency: 85 },
+                    { name: "OpenCV", proficiency: 80 },
+                    { name: "PyTorch/TF", proficiency: 65 }
+                ],
+                "Embedded Systems": [
+                    { name: "Arduino", proficiency: 75 },
+                    { name: "STM32", proficiency: 60 }
+                ],
+            },
+            certs: [
+                "BEng (Hons) Robotics Engineering, University of West of England (First Class Honours)",
+                "Grade 10 (Myanmar) — 3 Distinctions: Maths, Physics, Chemistry"
+            ]
+        };
 
-    const dataAnalystData = {
-      summary: "Data Analyst with an engineering background and strong analytical mindset. Skilled in SQL, Python, Power BI, and R for transforming data into insights and building effective dashboards.",
-      cv: "DATA_ANALYST_CV.pdf",
-      projects: [
-        { name: "Bristol Airbnb Market Analysis", tools: "SQL, Power BI, Tableau, Excel" },
-        { name: "Global Superstore Analytics", tools: "SQL, Power BI, DAX" },
-        { name: "House Price Forecasting", tools: "Python, Scikit-learn, XGBoost, Random Forest" },
-        { name: "E-commerce Customer Behavior Analysis", tools: "Python, SQL, Tableau, PostgreSQL" }
-      ],
-      skills: {
-        "Data Tools & Languages": ["SQL", "Python", "R", "Excel"],
-        "Visualization & BI": ["Power BI", "Tableau"],
-        "Analytics & Statistics": ["Descriptive Stats", "Regression", "Hypothesis Testing", "A/B Testing"],
-        "Data Processing": ["ETL", "Data Cleaning", "Dashboard Design"],
-        "Tools": ["Git", "Jupyter Notebook", "VS Code"]
-      },
-      certs: [
-        "BEng (Hons) Robotics Engineering, University of West of England (First Class Honours)",
-        "LinkedIn Learning Certifications — Data Analytics & Visualization"
-      ]
-    };
+        const dataAnalystData = {
+            summary: "Data Analyst with an engineering background and strong analytical mindset. Skilled in SQL, Python, Power BI, and R for transforming data into insights and building effective dashboards.",
+            cv: "DATA_ANALYST_CV.pdf",
+            projects: [
+                { 
+                    name: "Bristol Airbnb Market Analysis", 
+                    tools: "SQL, Power BI, Tableau, Excel",
+                    description: "Conducted an end-to-end analysis of Bristol's Airbnb market, focusing on pricing factors, neighborhood popularity, and optimal listing strategies. Dashboard available on Tableau Public.",
+                    github: "https://github.com/Kaung31/Bristol-Airbnb-Analysis",
+                    live: "https://public.tableau.com/views/BristolAirbnbAnalysis/Dashboard"
+                },
+                { 
+                    name: "Global Superstore Analytics", 
+                    tools: "SQL, Power BI, DAX",
+                    description: "Built a comprehensive Power BI dashboard to track key performance indicators (KPIs) like profit margin, sales by region, and customer segments, enabling executive decision-making.",
+                    github: "https://github.com/Kaung31/Superstore-Dashboard",
+                    live: "https://app.powerbi.com/view?r=ey..."
+                },
+                { 
+                    name: "House Price Forecasting", 
+                    tools: "Python, Scikit-learn, XGBoost, Random Forest",
+                    description: "Developed and compared multiple machine learning models (XGBoost performed best) to accurately predict housing prices based on location, features, and historical data.",
+                    github: "https://github.com/Kaung31/House-Price-Forecasting", live: null 
+                },
+            ],
+            skills: {
+                "Data Tools & Languages": [
+                    { name: "SQL", proficiency: 95 },
+                    { name: "Python", proficiency: 90 },
+                    { name: "R", proficiency: 65 }
+                ],
+                "Visualization & BI": [
+                    { name: "Power BI", proficiency: 88 },
+                    { name: "Tableau", proficiency: 80 }
+                ],
+                "Analytics & Statistics": [
+                    { name: "Regression", proficiency: 75 },
+                    { name: "A/B Testing", proficiency: 70 }
+                ],
+            },
+            certs: [
+                "BEng (Hons) Robotics Engineering, University of West of England (First Class Honours)",
+                "LinkedIn Learning Certifications — Data Analytics & Visualization"
+            ]
+        };
 
-    const roboticsBtn = document.getElementById("roboticsBtn");
-    const dataBtn = document.getElementById("dataBtn");
-    const projectList = document.getElementById("projectList");
-    const skillList = document.getElementById("skillList");
-    const certList = document.getElementById("certList");
-    const profileSummary = document.getElementById("profileSummary");
-    const cvBtn = document.getElementById("cvBtn");
-    const sections = document.querySelectorAll("section");
+        // --- DOM REFERENCES ---
+        const roboticsBtn = document.getElementById("roboticsBtn");
+        const dataBtn = document.getElementById("dataBtn");
+        const projectList = document.getElementById("projectList");
+        const skillList = document.getElementById("skillList");
+        const certList = document.getElementById("certList");
+        const profileSummary = document.getElementById("profileSummary");
+        const cvBtn = document.getElementById("cvBtn");
+        const sections = document.querySelectorAll("section");
 
-    function renderProfile(data, type) {
-      profileSummary.textContent = data.summary;
-      projectList.innerHTML = data.projects.map(p => `
-        <div class="card">
-          <h3>${p.name}</h3>
-          <p><strong>Tools:</strong> ${p.tools}</p>
-        </div>`).join("");
+        // --- RENDERING FUNCTIONS ---
 
-      skillList.innerHTML = Object.entries(data.skills).map(([cat, items]) => `
-        <div class="card">
-          <h3>${cat}</h3>
-          <div class="skills-group">${items.map(i => `<span class="skill-tag">${i}</span>`).join("")}</div>
-        </div>`).join("");
+        function renderSkillBars(data) {
+            return Object.entries(data.skills).map(([cat, items]) => `
+                <div class="card skill-card" style="border-top-color: var(--accent-teal);">
+                    <h3>${cat}</h3>
+                    <div class="skills-group">
+                        ${items.map(i => `
+                            <div class="skill-bar-container">
+                                <span class="skill-name">${i.name}</span>
+                                <div class="skill-bar">
+                                    <div class="skill-bar-fill" style="width: ${i.proficiency}%;"></div>
+                                </div>
+                            </div>
+                        `).join("")}
+                    </div>
+                </div>`).join("");
+        }
 
-      certList.innerHTML = data.certs.map(c => `<div class="card">${c}</div>`).join("");
-      cvBtn.textContent = "Download " + (type === "robotics" ? "Robotics CV" : "Data Analyst CV");
-      cvBtn.onclick = () => window.open(data.cv, "_blank");
-    }
+        function renderProjects(data) {
+            return data.projects.map((p, index) => `
+                <div class="card project-card">
+                    <div class="project-header" data-project-index="${index}">
+                        <h3 class="project-title">${p.name}</h3>
+                        <i class="project-toggle-icon" data-lucide="chevron-down"></i>
+                    </div>
+                    <div class="project-content" data-content-index="${index}">
+                        <p style="color: var(--text-muted);">${p.description}</p>
+                        <p><strong>Tools Used:</strong> ${p.tools}</p>
+                        <div class="project-links">
+                            ${p.github ? `<a href="${p.github}" target="_blank"><i data-lucide="github" style="width: 16px; height: 16px;"></i> GitHub Repo</a>` : ''}
+                            ${p.live ? `<a href="${p.live}" target="_blank"><i data-lucide="external-link" style="width: 16px; height: 16px;"></i> Live Demo/Dashboard</a>` : ''}
+                        </div>
+                    </div>
+                </div>`).join("");
+        }
 
-    function switchProfile(type) {
-      sections.forEach(sec => sec.classList.add("fade-out"));
-      setTimeout(() => {
-        renderProfile(type === "robotics" ? roboticsData : dataAnalystData, type);
-        sections.forEach(sec => sec.classList.remove("fade-out"));
-      }, 400);
-    }
+        function renderCerts(data) {
+            return data.certs.map(c => `<div class="card" style="border-top-color: var(--accent-teal);">${c}</div>`).join("");
+        }
+        
+        function renderProfile(data, type) {
+            profileSummary.textContent = data.summary;
+            projectList.innerHTML = renderProjects(data);
+            skillList.innerHTML = renderSkillBars(data);
+            certList.innerHTML = renderCerts(data);
+            cvBtn.textContent = "Download " + (type === "robotics" ? "Robotics CV" : "Data Analyst CV");
+            cvBtn.onclick = () => window.open(data.cv, "_blank");
+            
+            // Re-initialize Lucide icons after rendering new content
+            lucide.createIcons();
 
-    renderProfile(roboticsData, "robotics");
-    roboticsBtn.onclick = () => switchProfile("robotics");
-    dataBtn.onclick = () => switchProfile("data");
-  </script>
+            // Set up project toggles (must run after content is in DOM)
+            setupProjectToggles();
+        }
+
+        // --- INTERACTION LOGIC ---
+
+        function setupProjectToggles() {
+            document.querySelectorAll('.project-header').forEach(header => {
+                header.onclick = function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('.project-toggle-icon');
+
+                    if (content.style.maxHeight) {
+                        // Collapse
+                        content.style.maxHeight = null;
+                        icon.style.transform = 'rotate(0deg)';
+                    } else {
+                        // Expand
+                        content.style.maxHeight = content.scrollHeight + "px";
+                        icon.style.transform = 'rotate(180deg)';
+                    }
+                };
+            });
+        }
+
+        function switchProfile(type) {
+            sections.forEach(sec => sec.classList.add("fade-out"));
+            
+            // Toggle active button state
+            roboticsBtn.classList.remove('active');
+            dataBtn.classList.remove('active');
+            if (type === "robotics") {
+                roboticsBtn.classList.add('active');
+            } else {
+                dataBtn.classList.add('active');
+            }
+
+            setTimeout(() => {
+                renderProfile(type === "robotics" ? roboticsData : dataAnalystData, type);
+                sections.forEach(sec => sec.classList.remove("fade-out"));
+            }, 400);
+        }
+
+        // --- INITIALIZATION ---
+        window.onload = function() {
+            // Initialize with Robotics profile
+            switchProfile("robotics"); 
+            
+            // Add event listeners
+            roboticsBtn.onclick = () => switchProfile("robotics");
+            dataBtn.onclick = () => switchProfile("data");
+        }
+    </script>
 </body>
 </html>
