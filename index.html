@@ -13,20 +13,20 @@
     <!-- Lucide Icons for professionalism -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <!-- ===== STYLE: PROFESSIONAL DARK THEME & VISUAL SKILLS ===== -->
+    <!-- ===== STYLE: PROFESSIONAL DARK THEME & VISUAL SKILLS (Updated Color) ===== -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
-        /* CSS Variables for a stable dark theme */
+        /* CSS Variables for a stable dark theme, professional colors */
         :root {
-            --bg-main: #0D1117; 
+            --bg-main: #171923; /* Softer Dark Gray/Navy */
             --bg-nav: #161B22;
             --bg-card: #161B22; 
-            --text-main: #e6edf3;
+            --text-main: #E2E8F0; /* Muted Off-White */
             --text-muted: #8b949e;
-            --accent-blue: #58a6ff;
-            --accent-teal: #00bfa6;
-            --border-color: #21262d;
+            --accent-blue: #89B4F8; /* NEW: Soft Light Blue for titles/bars */
+            --accent-teal: #32d99d; /* Muted Cyan/Tech Green for links/buttons */
+            --border-color: #2D3748; /* Dark border for separation */
         }
 
         body {
@@ -100,23 +100,23 @@
             background: var(--accent-teal);
             border: 2px solid var(--accent-blue);
             transform: scale(1.03); 
-            box-shadow: 0 0 15px rgba(0, 191, 166, 0.5);
+            box-shadow: 0 0 15px rgba(50, 217, 157, 0.3); /* Muted Teal glow on active */
         }
 
         /* --- CARD STYLES --- */
         .card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
-            border-top: 3px solid var(--accent-blue); /* Accent line */
+            border-top: 3px solid var(--accent-blue); /* Accent line uses NEW blue */
             border-radius: 8px;
             padding: 20px;
-            margin-bottom: 25px; /* Increased margin */
+            margin-bottom: 25px; 
             box-shadow: 0 4px 10px rgba(0,0,0,0.4);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0, 191, 166, 0.2); /* Teal glow on hover */
+            box-shadow: 0 8px 15px rgba(50, 217, 157, 0.2); /* Teal glow on hover */
         }
 
         /* --- PROJECT EXPANSION (CUSTOM ACCORDION) --- */
@@ -179,7 +179,7 @@
         }
         .skill-bar-fill {
             height: 100%;
-            background: var(--accent-blue);
+            background: var(--accent-blue); /* Fill uses NEW soft blue */
             transition: width 1s ease-out;
         }
         
@@ -268,11 +268,11 @@
     <section id="soft-skills">
         <h2><i data-lucide="briefcase"></i> Soft & Language Skills</h2>
         <div class="skills-group" style="flex-direction: row; gap: 15px;">
-            <span class="skill-tag">Critical Thinking</span>
-            <span class="skill-tag">Problem Solving</span>
-            <span class="skill-tag">Team Leadership</span>
-            <span class="skill-tag">English (Fluent)</span>
-            <span class="skill-tag">Chinese (Fluent)</span>
+            <span class="skill-tag" style="background: #2D3748; color: var(--accent-blue); padding: 6px 12px; border-radius: 4px;">Critical Thinking</span>
+            <span class="skill-tag" style="background: #2D3748; color: var(--accent-blue); padding: 6px 12px; border-radius: 4px;">Problem Solving</span>
+            <span class="skill-tag" style="background: #2D3748; color: var(--accent-blue); padding: 6px 12px; border-radius: 4px;">Team Leadership</span>
+            <span class="skill-tag" style="background: #2D3748; color: var(--accent-blue); padding: 6px 12px; border-radius: 4px;">English (Fluent)</span>
+            <span class="skill-tag" style="background: #2D3748; color: var(--accent-blue); padding: 6px 12px; border-radius: 4px;">Chinese (Fluent)</span>
         </div>
     </section>
 
@@ -282,10 +282,7 @@
         <div id="certList"></div>
     </section>
 
-    <!-- DOWNLOAD CV BUTTON -->
-    <section class="center">
-        <button class="cv-btn" id="cvBtn">Download Robotics CV</button>
-    </section>
+    <!-- DOWNLOAD CV BUTTON REMOVED -->
 
     <!-- FOOTER -->
     <footer>
@@ -296,31 +293,38 @@
     <script>
         // --- DATA STRUCTURES ---
         const roboticsData = {
-            summary: "Robotics Engineer passionate about intelligent automation and computer vision. Skilled in ROS, C++, and embedded systems for real-time robotics, including fatigue detection, vehicle recognition, and robotic arm control.",
+            summary: "Robotics Engineer (BEng, First Class Honours) with hands-on experience in ROS, STM32, and C++ for real-time robotic applications. Skilled in robot perception, autonomous navigation, and control systems. Passionate about solving real-world problems through intelligent robotics and computer vision.",
             cv: "Robotics_CV.pdf",
             projects: [
                 { 
                     name: "Driver Fatigue Detection", 
-                    tools: "Python, MediaPipe, OpenCV, ROS", 
-                    description: "Developed a real-time system using computer vision to monitor driver alertness based on eye-opening ratio (EAR) and head pose estimation. Integrated the solution with ROS for autonomous vehicle safety applications.",
+                    tools: "Python, MediaPipe, OpenCV, EAR/MAR", 
+                    description: "Developed a real-time driver fatigue detection system using MediaPipe Face Mesh, EAR, MAR, and blink/yawn detection. Implemented adaptive thresholding based on head pose and lighting conditions, achieving 98% accuracy without glasses. (Undergraduate Research Thesis)",
                     github: "https://github.com/Kaung31/Driver-Fatigue-Detection", live: null
                 },
                 { 
                     name: "Vehicle Detection with YOLOv8", 
-                    tools: "Python, OpenCV, Ultralytics, Streamlit",
-                    description: "Implemented YOLOv8 for accurate, real-time vehicle and pedestrian detection from surveillance footage. Created an interactive dashboard with Streamlit for easy demonstration and data visualization.",
+                    tools: "Python, YOLOv8, OpenCV, Ultralytics, Streamlit",
+                    description: "Trained a custom YOLOv8 object detection model on aerial drone footage (VisDrone dataset) to detect cars, buses, and trucks. Built a real-time video-processing pipeline using Python, OpenCV, and Ultralytics for frame-by-frame inference. Deployed the model using Streamlit on Hugging Face Spaces.",
                     github: "https://github.com/Kaung31/YOLOv8-Vehicle-Detector", live: null
+                },
+                { 
+                    name: "Localization & Mapping with ROS", 
+                    tools: "ROS, Gazebo, MATLAB, EKF, Particle Filter", 
+                    description: "Developed a MATLAB-based control system for TurtleBot3 navigation in ROS/Gazebo, applying velocity motion models and occupancy grid mapping. Implemented EKF and Particle Filter algorithms to fuse LIDAR and odometry data for accurate autonomous localization.",
+                    github: null, live: null 
                 },
                 { 
                     name: "AL5D Robotic Arm Automation", 
                     tools: "Arduino, C++",
-                    description: "Designed inverse kinematics solutions and implemented C++ code on an Arduino microcontroller to automate pick-and-place tasks with high precision for small-scale manufacturing simulation.",
+                    description: "Designed a robotic arm control system using Arduino, joysticks, button pins, and LEDs for test tube handling. Programmed precise pick-and-place operations, achieving reliable and repeatable test tube transfers between racks.",
                     github: "https://github.com/Kaung31/AL5D-Arm-Control", live: null
                 },
                 { 
-                    name: "Localization & Mapping", 
-                    tools: "ROS, Gazebo, MATLAB", 
-                    description: "Simulated and tested various SLAM algorithms within a Gazebo environment to accurately map and localize a virtual mobile robot.", github: null, live: null 
+                    name: "Micromouse Robotics Challenge", 
+                    tools: "STM32, C++, DFS, Flood Fill", 
+                    description: "Designed and implemented a maze-solving algorithm using DFS-based exploration and Flood Fill for shortest path computation on STM32. Focused on algorithm development within the team, ensuring adaptability and optimizing speed.", 
+                    github: null, live: null 
                 },
             ],
             skills: {
@@ -329,14 +333,15 @@
                     { name: "C++", proficiency: 85 },
                     { name: "MATLAB", proficiency: 70 }
                 ],
-                "Frameworks & Simulation": [
+                "Robotics & ROS": [
                     { name: "ROS", proficiency: 85 },
-                    { name: "OpenCV", proficiency: 80 },
-                    { name: "PyTorch/TF", proficiency: 65 }
+                    { name: "Gazebo", proficiency: 80 },
+                    { name: "STM32/Arduino", proficiency: 75 }
                 ],
-                "Embedded Systems": [
-                    { name: "Arduino", proficiency: 75 },
-                    { name: "STM32", proficiency: 60 }
+                "Perception & Vision": [
+                    { name: "OpenCV", proficiency: 80 },
+                    { name: "Computer Vision", proficiency: 75 },
+                    { name: "Sensor Fusion", proficiency: 70 }
                 ],
             },
             certs: [
@@ -346,27 +351,33 @@
         };
 
         const dataAnalystData = {
-            summary: "Data Analyst with an engineering background and strong analytical mindset. Skilled in SQL, Python, Power BI, and R for transforming data into insights and building effective dashboards.",
+            summary: "First Class Honours Engineering graduate with a strong focus on data analytics. Proficient in SQL, Python, Power BI, and Tableau for cleaning data, building dashboards, and drawing out key insights. Focused on turning complex data into clear, actionable findings to support data-driven decisions.",
             cv: "DATA_ANALYST_CV.pdf",
             projects: [
                 { 
                     name: "Bristol Airbnb Market Analysis", 
-                    tools: "SQL, Power BI, Tableau, Excel",
-                    description: "Conducted an end-to-end analysis of Bristol's Airbnb market, focusing on pricing factors, neighborhood popularity, and optimal listing strategies. Dashboard available on Tableau Public.",
+                    tools: "SQL, Power BI, Tableau, Excel, R",
+                    description: "Analyzed the Bristol Airbnb market to identify pricing trends and demand drivers. Used SQL for data extraction and cleaning, and leveraged Power BI/Tableau to build interactive dashboards. Delivered actionable insights, revealing high-demand areas and seasonal price influence.",
                     github: "https://github.com/Kaung31/Bristol-Airbnb-Analysis",
                     live: "https://public.tableau.com/views/BristolAirbnbAnalysis/Dashboard"
                 },
                 { 
+                    name: "E-commerce Customer Behavior Analysis", 
+                    tools: "Python, SQL (PostgreSQL), Tableau, Apriori",
+                    description: "Developed an end-to-end data pipeline using Python and SQL (PostgreSQL) to process over 390,000 transactional records. Conducted RFM analysis to segment 4,000+ customers into key behavioral groups. Built a product recommendation engine (Apriori algorithm).",
+                    github: null, live: null 
+                },
+                { 
                     name: "Global Superstore Analytics", 
-                    tools: "SQL, Power BI, DAX",
-                    description: "Built a comprehensive Power BI dashboard to track key performance indicators (KPIs) like profit margin, sales by region, and customer segments, enabling executive decision-making.",
+                    tools: "SQL, Power BI, DAX, Excel",
+                    description: "Modeled a large retail order dataset and designed a star schema. Used SQL to query KPIs and built a professional Power BI dashboard using DAX measures. Provided data-driven recommendations showing APAC and US regions drive the most revenue.",
                     github: "https://github.com/Kaung31/Superstore-Dashboard",
                     live: "https://app.powerbi.com/view?r=ey..."
                 },
                 { 
                     name: "House Price Forecasting", 
                     tools: "Python, Scikit-learn, XGBoost, Random Forest",
-                    description: "Developed and compared multiple machine learning models (XGBoost performed best) to accurately predict housing prices based on location, features, and historical data.",
+                    description: "Trained XGBoost, Random Forest, and Linear Regression models to forecast 2024 Bristol house prices using historical data. Achieved ~£156K MAE on 2024 predictions across 30+ postcode areas, tuning models with cross-validation.",
                     github: "https://github.com/Kaung31/House-Price-Forecasting", live: null 
                 },
             ],
@@ -374,15 +385,17 @@
                 "Data Tools & Languages": [
                     { name: "SQL", proficiency: 95 },
                     { name: "Python", proficiency: 90 },
-                    { name: "R", proficiency: 65 }
+                    { name: "Excel", proficiency: 85 },
+                    { name: "R", proficiency: 70 }
                 ],
                 "Visualization & BI": [
                     { name: "Power BI", proficiency: 88 },
                     { name: "Tableau", proficiency: 80 }
                 ],
                 "Analytics & Statistics": [
-                    { name: "Regression", proficiency: 75 },
-                    { name: "A/B Testing", proficiency: 70 }
+                    { name: "Regression Analysis", proficiency: 75 },
+                    { name: "Hypothesis Testing", proficiency: 70 },
+                    { name: "A/B Testing", proficiency: 65 }
                 ],
             },
             certs: [
@@ -398,7 +411,6 @@
         const skillList = document.getElementById("skillList");
         const certList = document.getElementById("certList");
         const profileSummary = document.getElementById("profileSummary");
-        const cvBtn = document.getElementById("cvBtn");
         const sections = document.querySelectorAll("section");
 
         // --- RENDERING FUNCTIONS ---
@@ -447,8 +459,6 @@
             projectList.innerHTML = renderProjects(data);
             skillList.innerHTML = renderSkillBars(data);
             certList.innerHTML = renderCerts(data);
-            cvBtn.textContent = "Download " + (type === "robotics" ? "Robotics CV" : "Data Analyst CV");
-            cvBtn.onclick = () => window.open(data.cv, "_blank");
             
             // Re-initialize Lucide icons after rendering new content
             lucide.createIcons();
@@ -470,7 +480,11 @@
                         content.style.maxHeight = null;
                         icon.style.transform = 'rotate(0deg)';
                     } else {
-                        // Expand
+                        // Collapse all others (optional, for cleaner display)
+                        document.querySelectorAll('.project-content').forEach(c => c.style.maxHeight = null);
+                        document.querySelectorAll('.project-toggle-icon').forEach(i => i.style.transform = 'rotate(0deg)');
+
+                        // Expand current
                         content.style.maxHeight = content.scrollHeight + "px";
                         icon.style.transform = 'rotate(180deg)';
                     }
@@ -501,7 +515,7 @@
             // Initialize with Robotics profile
             switchProfile("robotics"); 
             
-            // Add event listeners
+            // Add event listeners (though already assigned inline, for robustness)
             roboticsBtn.onclick = () => switchProfile("robotics");
             dataBtn.onclick = () => switchProfile("data");
         }
