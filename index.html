@@ -24,8 +24,8 @@
             --bg-card: #161B22; 
             --text-main: #E2E8F0; /* Muted Off-White */
             --text-muted: #8b949e;
-            --accent-blue: #89B4F8; /* NEW: Soft Light Blue for titles/bars */
-            --accent-teal: #32d99d; /* Muted Cyan/Tech Green for links/buttons */
+            --accent-blue: #89B4F8; /* Soft Light Blue for H1, H3, skill bars, hero buttons */
+            --accent-teal: #32d99d; /* Muted Cyan/Tech Green for H2, links, active buttons */
             --border-color: #2D3748; /* Dark border for separation */
         }
 
@@ -41,18 +41,27 @@
         a { color: var(--accent-teal); text-decoration: none; transition: color 0.3s ease; }
         a:hover { color: var(--accent-blue); }
 
-        h1, h2, h3 {
-            color: var(--accent-blue);
+        /* H1 (Hero Title) uses soft blue */
+        h1 {
+            color: var(--accent-blue); 
             margin-bottom: 0.5em;
         }
         
+        /* H2 (Section Titles) uses teal/green */
         h2 {
+            color: var(--accent-teal); 
             display: flex;
             align-items: center;
             gap: 10px;
             padding-bottom: 5px;
             border-bottom: 1px solid var(--border-color);
             margin-top: 40px;
+        }
+
+        /* H3 (Project/Skill Category Titles) uses soft blue */
+        h3 {
+            color: var(--accent-blue);
+            margin-bottom: 0.5em;
         }
 
         section {
@@ -107,7 +116,7 @@
         .card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
-            border-top: 3px solid var(--accent-blue); /* Accent line uses NEW blue */
+            border-top: 3px solid var(--accent-blue); /* Accent line uses NEW soft blue */
             border-radius: 8px;
             padding: 20px;
             margin-bottom: 25px; 
@@ -129,7 +138,7 @@
             margin-bottom: 10px;
         }
         .project-title {
-            color: var(--accent-blue);
+            color: var(--accent-blue); /* Project Titles use NEW soft blue */
             margin: 0;
             font-weight: 600;
         }
@@ -168,7 +177,7 @@
         }
         .skill-name {
             font-weight: 600;
-            color: var(--accent-teal);
+            color: var(--accent-teal); /* Skill NAMES still use Teal for contrast with the Blue bar fill */
             font-size: 0.95rem;
         }
         .skill-bar {
