@@ -3,24 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kaung Min Khant | Portfolio</title>
+  <title>Kaung Min Khant | Robotics & Data Analytics Portfolio</title>
+
+  <!-- ===== META TAGS ===== -->
+  <meta name="description" content="Portfolio of Kaung Min Khant — Robotics Engineer & Data Analyst. Explore projects in robotics, AI, and data analytics." />
+  <meta name="keywords" content="Kaung Min Khant, Robotics Engineer, Data Analyst, Portfolio, ROS, Power BI, Python, SQL" />
+  <meta name="author" content="Kaung Min Khant" />
+  <meta property="og:title" content="Kaung Min Khant | Robotics & Data Analytics Portfolio" />
+  <meta property="og:description" content="Explore my projects in Robotics and Data Analytics — from AI-driven automation to business insights." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://kaungminkhant.vercel.app" />
+  <meta property="og:image" content="https://kaungminkhant.vercel.app/preview.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kaung Min Khant | Robotics & Data Analytics Portfolio" />
+  <meta name="twitter:description" content="Explore my work in robotics, AI, and data analytics." />
+  <meta name="twitter:image" content="https://kaungminkhant.vercel.app/preview.png" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+  <!-- ===== STYLE ===== -->
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-    /* ======== GLOBAL STYLES ======== */
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background-color: #0d1117;
+      background-color: #1a1f25; /* charcoal dark */
       color: #e6edf3;
       line-height: 1.6;
-      transition: background-color 0.3s ease;
     }
 
-    a {
-      color: #00bfa6;
-      text-decoration: none;
-    }
+    a { color: #00bfa6; text-decoration: none; }
 
     h1, h2, h3 {
       color: #58a6ff;
@@ -31,38 +43,24 @@
       max-width: 900px;
       margin: 60px auto;
       padding: 0 20px;
-      opacity: 1;
       transition: opacity 0.5s ease;
     }
 
     .center { text-align: center; }
 
-    /* ======== NAVBAR ======== */
     nav {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       background: #161b22;
       padding: 15px 40px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.4);
       position: sticky;
       top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      z-index: 10;
     }
 
-    nav h1 {
-      font-size: 1.4rem;
-      color: #00bfa6;
-      letter-spacing: 0.5px;
-    }
-
-    /* ======== HERO ======== */
-    .hero-buttons {
-      margin-top: 15px;
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-    }
+    nav h1 { font-size: 1.4rem; color: #00bfa6; }
 
     .hero-btn {
       background: linear-gradient(90deg, #007bff, #00bfa6);
@@ -80,9 +78,8 @@
       opacity: 0.9;
     }
 
-    /* ======== CARDS ======== */
     .card {
-      background: #161b22;
+      background: #21262d;
       border-radius: 10px;
       padding: 20px;
       margin-bottom: 20px;
@@ -102,20 +99,11 @@
     }
 
     .skill-tag {
-      background: #21262d;
+      background: #2d333b;
       border-radius: 20px;
       padding: 6px 14px;
       font-size: 0.9rem;
       color: #00bfa6;
-    }
-
-    footer {
-      text-align: center;
-      padding: 25px;
-      background: #161b22;
-      margin-top: 60px;
-      color: #8b949e;
-      font-size: 0.9rem;
     }
 
     button.cv-btn {
@@ -131,9 +119,15 @@
       transition: transform 0.2s ease, opacity 0.3s ease;
     }
 
-    button.cv-btn:hover {
-      transform: scale(1.05);
-      opacity: 0.9;
+    button.cv-btn:hover { transform: scale(1.05); opacity: 0.9; }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #161b22;
+      margin-top: 60px;
+      color: #8b949e;
+      font-size: 0.9rem;
     }
 
     .fade-out { opacity: 0; }
@@ -141,21 +135,20 @@
 </head>
 <body>
 
-  <!-- ======== NAVBAR ======== -->
-  <nav>
-    <h1>Kaung Min Khant</h1>
-  </nav>
+  <!-- ===== NAV ===== -->
+  <nav><h1>Kaung Min Khant</h1></nav>
 
-  <!-- ======== HERO ======== -->
+  <!-- ===== HERO ===== -->
   <section class="center">
     <h1>Hi, I’m Kaung Min Khant</h1>
-    <p id="heroDesc">
-      Robotics Engineer with a strong foundation in perception, control, and intelligent systems.
+    <p><em>Robotics Engineer & Data Analyst</em></p>
+    <p style="max-width:600px; margin:10px auto;">
+      Explore both sides of my work — you can switch between my <strong>Robotics</strong> and <strong>Data Analytics</strong> profiles below to see different projects and skills.
     </p>
 
-    <div class="hero-buttons">
-      <button class="hero-btn" id="roboticsBtn">🤖 Robotics Profile</button>
-      <button class="hero-btn" id="dataBtn">📊 Data Analyst Profile</button>
+    <div style="margin-top:20px;">
+      <button class="hero-btn" id="roboticsBtn">🤖 View Robotics Profile</button>
+      <button class="hero-btn" id="dataBtn">📊 View Data Analyst Profile</button>
     </div>
 
     <p style="margin-top:15px;">
@@ -165,25 +158,25 @@
     </p>
   </section>
 
-  <!-- ======== PROFILE SUMMARY ======== -->
-  <section id="profileSection">
+  <!-- ===== PROFILE SUMMARY ===== -->
+  <section>
     <h2>Profile Summary</h2>
     <p id="profileSummary"></p>
   </section>
 
-  <!-- ======== PROJECTS ======== -->
+  <!-- ===== PROJECTS ===== -->
   <section>
-    <h2>Highlighted Projects</h2>
+    <h2>Projects</h2>
     <div id="projectList"></div>
   </section>
 
-  <!-- ======== SKILLS ======== -->
+  <!-- ===== SKILLS ===== -->
   <section>
     <h2>Technical Skills</h2>
     <div id="skillList"></div>
   </section>
 
-  <!-- ======== SOFT SKILLS ======== -->
+  <!-- ===== SOFT SKILLS ===== -->
   <section>
     <h2>Soft & Language Skills</h2>
     <div class="skills-group">
@@ -195,7 +188,7 @@
     </div>
   </section>
 
-  <!-- ======== CERTIFICATES ======== -->
+  <!-- ===== CERTIFICATES ===== -->
   <section>
     <h2>Education & Certificates</h2>
     <div id="certList"></div>
@@ -210,22 +203,24 @@
   </footer>
 
   <script>
-    /* ======== DATA ======== */
     const roboticsData = {
-      desc: "Robotics Engineer passionate about intelligent systems and automation. Skilled in real-time perception, control, and computer vision — developing projects like fatigue detection, object recognition, and robotic arm automation.",
-      summary: "Robotics Engineer with a strong foundation in perception, control, and intelligent systems. Experienced in ROS, deep learning, and embedded development, building real-world robotics applications that integrate AI and automation.",
+      summary: "Robotics Engineer passionate about intelligent automation and computer vision. Skilled in ROS, C++, and embedded systems for real-time robotics, including fatigue detection, vehicle recognition, and robotic arm control.",
       cv: "Robotics_CV.pdf",
       projects: [
-        {name: "Driver Fatigue Detection", desc: "Developed a real-time fatigue detection system using facial landmarks (EAR, MAR, head pose). Achieved 98% accuracy using adaptive thresholding under variable lighting."},
-        {name: "Vehicle Detection (YOLOv8)", desc: "Trained YOLOv8 model for vehicle recognition using aerial drone footage. Deployed as an interactive web app for video uploads and inference."},
-        {name: "AL5D Robotic Arm Automation", desc: "Built a robotic arm system for test tube handling using Arduino and C++. Programmed precise pick-and-place sequences for repeatable operations."},
-        {name: "Localization & Mapping", desc: "Implemented EKF and Particle Filter algorithms for TurtleBot3 navigation in ROS and Gazebo environments."}
+        { name: "Driver Fatigue Detection", tools: "Python, MediaPipe, OpenCV, ROS" },
+        { name: "Vehicle Detection with YOLOv8", tools: "Python, OpenCV, Ultralytics, Streamlit" },
+        { name: "AL5D Robotic Arm Automation", tools: "Arduino, C++" },
+        { name: "Localization & Mapping", tools: "ROS, Gazebo, MATLAB" },
+        { name: "NAO Robot for Bubble Tea Shop", tools: "Python, Choregraphe" },
+        { name: "ArUco Pattern Classification", tools: "MATLAB, Deep Learning" },
+        { name: "Micromouse Robotics Challenge", tools: "STM32, C++" }
       ],
       skills: {
         "Programming": ["Python", "C++", "MATLAB"],
-        "Frameworks & Simulation": ["ROS", "Gazebo", "OpenCV", "Deep Learning (PyTorch/TensorFlow)"],
-        "Embedded Systems": ["Arduino", "STM32", "Sensor Fusion"],
-        "Control & Perception": ["Motion Planning", "LIDAR", "PID Control", "Computer Vision"]
+        "Frameworks & Simulation": ["ROS", "Gazebo", "OpenCV", "PyTorch", "TensorFlow"],
+        "Embedded Systems": ["Arduino", "STM32", "Microcontrollers"],
+        "Control & Perception": ["Computer Vision", "Sensor Fusion", "Motion Planning", "PID Control"],
+        "Tools": ["Git", "VS Code", "MATLAB Simulink"]
       },
       certs: [
         "BEng (Hons) Robotics Engineering, University of West of England (First Class Honours)",
@@ -234,19 +229,20 @@
     };
 
     const dataAnalystData = {
-      desc: "Data-driven problem solver with an engineering mindset. Skilled in Python, SQL, Power BI, and R for transforming data into clear business insights and supporting evidence-based decisions.",
-      summary: "Data-driven problem solver with an engineering mindset. Skilled in Python, SQL, Power BI, and R for transforming complex data into actionable insights. Experienced in visualization, forecasting, and business reporting that connect technical detail to strategic outcomes.",
+      summary: "Data Analyst with an engineering background and strong analytical mindset. Skilled in SQL, Python, Power BI, and R for transforming data into insights and building effective dashboards.",
       cv: "DATA_ANALYST_CV.pdf",
       projects: [
-        {name: "Bristol Airbnb Market Analysis", desc: "Analyzed Airbnb market pricing and demand trends using SQL, Tableau, and Power BI. Delivered insights showing seasonal pricing patterns and high-demand areas like Clifton. <a href='https://github.com/Kaung31/Bristol-Airbnb-Analysis' target='_blank'>View on GitHub</a>"},
-        {name: "Global Superstore Analytics", desc: "Built Power BI dashboards using DAX to visualize regional sales and profit KPIs. Identified the APAC region as a key revenue driver."},
-        {name: "E-commerce Customer Behavior Analysis", desc: "Processed 390k+ records with SQL and Python to segment customers (RFM model). Built a recommendation engine using Apriori for cross-selling."},
-        {name: "House Price Forecasting", desc: "Trained ML models (XGBoost, Random Forest, Linear Regression) to forecast 2024 Bristol house prices. Achieved ~£156K MAE across 30+ postcode areas."}
+        { name: "Bristol Airbnb Market Analysis", tools: "SQL, Power BI, Tableau, Excel" },
+        { name: "Global Superstore Analytics", tools: "SQL, Power BI, DAX" },
+        { name: "House Price Forecasting", tools: "Python, Scikit-learn, XGBoost, Random Forest" },
+        { name: "E-commerce Customer Behavior Analysis", tools: "Python, SQL, Tableau, PostgreSQL" }
       ],
       skills: {
-        "Analytics & Tools": ["SQL", "Python", "Power BI", "Tableau", "Excel", "R"],
-        "Statistical Methods": ["Descriptive Statistics", "A/B Testing", "Regression", "Hypothesis Testing"],
-        "Data Handling": ["Data Cleaning", "ETL", "Data Visualization", "Dashboard Design"]
+        "Data Tools & Languages": ["SQL", "Python", "R", "Excel"],
+        "Visualization & BI": ["Power BI", "Tableau"],
+        "Analytics & Statistics": ["Descriptive Stats", "Regression", "Hypothesis Testing", "A/B Testing"],
+        "Data Processing": ["ETL", "Data Cleaning", "Dashboard Design"],
+        "Tools": ["Git", "Jupyter Notebook", "VS Code"]
       },
       certs: [
         "BEng (Hons) Robotics Engineering, University of West of England (First Class Honours)",
@@ -254,54 +250,42 @@
       ]
     };
 
-    /* ======== DOM ELEMENTS ======== */
     const roboticsBtn = document.getElementById("roboticsBtn");
     const dataBtn = document.getElementById("dataBtn");
-    const heroDesc = document.getElementById("heroDesc");
-    const profileSummary = document.getElementById("profileSummary");
     const projectList = document.getElementById("projectList");
     const skillList = document.getElementById("skillList");
     const certList = document.getElementById("certList");
+    const profileSummary = document.getElementById("profileSummary");
     const cvBtn = document.getElementById("cvBtn");
     const sections = document.querySelectorAll("section");
 
-    /* ======== FUNCTIONS ======== */
     function renderProfile(data, type) {
-      heroDesc.textContent = data.desc;
       profileSummary.textContent = data.summary;
-
       projectList.innerHTML = data.projects.map(p => `
         <div class="card">
           <h3>${p.name}</h3>
-          <p>${p.desc}</p>
-        </div>
-      `).join("");
+          <p><strong>Tools:</strong> ${p.tools}</p>
+        </div>`).join("");
 
-      skillList.innerHTML = Object.entries(data.skills)
-        .map(([group, items]) => `
-          <div class="card">
-            <h3>${group}</h3>
-            <div class="skills-group">
-              ${items.map(i => `<span class="skill-tag">${i}</span>`).join("")}
-            </div>
-          </div>
-        `).join("");
+      skillList.innerHTML = Object.entries(data.skills).map(([cat, items]) => `
+        <div class="card">
+          <h3>${cat}</h3>
+          <div class="skills-group">${items.map(i => `<span class="skill-tag">${i}</span>`).join("")}</div>
+        </div>`).join("");
 
       certList.innerHTML = data.certs.map(c => `<div class="card">${c}</div>`).join("");
       cvBtn.textContent = "Download " + (type === "robotics" ? "Robotics CV" : "Data Analyst CV");
       cvBtn.onclick = () => window.open(data.cv, "_blank");
     }
 
-    /* ======== ANIMATED SWITCH ======== */
-    function switchProfile(profileType) {
+    function switchProfile(type) {
       sections.forEach(sec => sec.classList.add("fade-out"));
       setTimeout(() => {
-        renderProfile(profileType === "robotics" ? roboticsData : dataAnalystData, profileType);
+        renderProfile(type === "robotics" ? roboticsData : dataAnalystData, type);
         sections.forEach(sec => sec.classList.remove("fade-out"));
       }, 400);
     }
 
-    /* ======== INITIAL LOAD ======== */
     renderProfile(roboticsData, "robotics");
     roboticsBtn.onclick = () => switchProfile("robotics");
     dataBtn.onclick = () => switchProfile("data");
