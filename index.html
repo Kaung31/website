@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kaung Min Khant | Portfolio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    /* ======== GLOBAL STYLES ======== */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #0d1117;
+      color: #e6edf3;
+      line-height: 1.6;
+      transition: background-color 0.3s ease;
+    }
+
+    a {
+      color: #00bfa6;
+      text-decoration: none;
+    }
+
+    h1, h2, h3 {
+      color: #58a6ff;
+      margin-bottom: 0.5em;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+      opacity: 1;
+      transition: opacity 0.5s ease;
+    }
+
+    .center { text-align: center; }
+
+    /* ======== NAVBAR ======== */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #161b22;
+      padding: 15px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+
+    nav h1 {
+      font-size: 1.4rem;
+      color: #00bfa6;
+      letter-spacing: 0.5px;
+    }
+
+    /* ======== HERO ======== */
+    .hero-buttons {
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .hero-btn {
+      background: linear-gradient(90deg, #007bff, #00bfa6);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: transform 0.2s ease, opacity 0.3s ease;
+    }
+
+    .hero-btn:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+
+    /* ======== CARDS ======== */
+    .card {
+      background: #161b22;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+
+    .skills-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-tag {
+      background: #21262d;
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 0.9rem;
+      color: #00bfa6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #161b22;
+      margin-top: 60px;
+      color: #8b949e;
+      font-size: 0.9rem;
+    }
+
+    button.cv-btn {
+      background: linear-gradient(90deg, #007bff, #00bfa6);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 12px 22px;
+      cursor: pointer;
+      font-size: 1rem;
+      margin-top: 15px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+      transition: transform 0.2s ease, opacity 0.3s ease;
+    }
+
+    button.cv-btn:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+
+    .fade-out { opacity: 0; }
+  </style>
+</head>
+<body>
+
+  <!-- ======== NAVBAR ======== -->
+  <nav>
+    <h1>Kaung Min Khant</h1>
+  </nav>
+
+  <!-- ======== HERO ======== -->
+  <section class="center">
+    <h1>Hi, I’m Kaung Min Khant</h1>
+    <p id="heroDesc">
+      Robotics Engineer with a strong foundation in perception, control, and intelligent systems.
+    </p>
+
+    <div class="hero-buttons">
+      <button class="hero-btn" id="roboticsBtn">🤖 Robotics Profile</button>
+      <button class="hero-btn" id="dataBtn">📊 Data Analyst Profile</button>
+    </div>
+
+    <p style="margin-top:15px;">
+      <a href="mailto:kaungmin3112002@gmail.com">📧 kaungmin3112002@gmail.com</a> |
+      <a href="https://www.linkedin.com/in/kaungminkhant/">LinkedIn</a> |
+      <a href="https://github.com/Kaung31">GitHub</a>
+    </p>
+  </section>
+
+  <!-- ======== PROFILE SUMMARY ======== -->
+  <section id="profileSection">
+    <h2>Profile Summary</h2>
+    <p id="profileSummary"></p>
+  </section>
+
+  <!-- ======== PROJECTS ======== -->
+  <section>
+    <h2>Highlighted Projects</h2>
+    <div id="projectList"></div>
+  </section>
+
+  <!-- ======== SKILLS ======== -->
+  <section>
+    <h2>Technical Skills</h2>
+    <div id="skillList"></div>
+  </section>
+
+  <!-- ======== SOFT SKILLS ======== -->
+  <section>
+    <h2>Soft & Language Skills</h2>
+    <div class="skills-group">
+      <span class="skill-tag">Critical Thinking</span>
+      <span class="skill-tag">Problem Solving</span>
+      <span class="skill-tag">Team Leadership</span>
+      <span class="skill-tag">English (Fluent)</span>
+      <span class="skill-tag">Chinese (Fluent)</span>
+    </div>
+  </section>
+
+  <!-- ======== CERTIFICATES ======== -->
+  <section>
+    <h2>Education & Certificates</h2>
+    <div id="certList"></div>
+  </section>
+
+  <section class="center">
+    <button class="cv-btn" id="cvBtn">Download Robotics CV</button>
+  </section>
+
+  <footer>
+    © 2025 Kaung Min Khant | Built & Deployed on Vercel
+  </footer>
+
+  <script>
+    /* ======== DATA ======== */
+    const roboticsData = {
+      desc: "Robotics Engineer passionate about intelligent systems and automation. Skilled in real-time perception, control, and computer vision — developing projects like fatigue detection, object recognition, and robotic arm automation.",
+      summary: "Robotics Engineer with a strong foundation in perception, control, and intelligent systems. Experienced in ROS, deep learning, and embedded development, building real-world robotics applications that integrate AI and automation.",
+      cv: "Robotics_CV.pdf",
+      projects: [
+        {name: "Driver Fatigue Detection", desc: "Developed a real-time fatigue detection system using facial landmarks (EAR, MAR, head pose). Achieved 98% accuracy using adaptive thresholding under variable lighting."},
+        {name: "Vehicle Detection (YOLOv8)", desc: "Trained YOLOv8 model for vehicle recognition using aerial drone footage. Deployed as an interactive web app for video uploads and inference."},
+        {name: "AL5D Robotic Arm Automation", desc: "Built a robotic arm system for test tube handling using Arduino and C++. Programmed precise pick-and-place sequences for repeatable operations."},
+        {name: "Localization & Mapping", desc: "Implemented EKF and Particle Filter algorithms for TurtleBot3 navigation in ROS and Gazebo environments."}
+      ],
+      skills: {
+        "Programming": ["Python", "C++", "MATLAB"],
+        "Frameworks & Simulation": ["ROS", "Gazebo", "OpenCV", "Deep Learning (PyTorch/TensorFlow)"],
+        "Embedded Systems": ["Arduino", "STM32", "Sensor Fusion"],
+        "Control & Perception": ["Motion Planning", "LIDAR", "PID Control", "Computer Vision"]
+      },
+      certs: [
+        "BEng (Hons) Robotics Engineering, University of West of England (First Class Honours)",
+        "Grade 10 (Myanmar) — 3 Distinctions: Maths, Physics, Chemistry"
+      ]
+    };
+
+    const dataAnalystData = {
+      desc: "Data-driven problem solver with an engineering mindset. Skilled in Python, SQL, Power BI, and R for transforming data into clear business insights and supporting evidence-based decisions.",
+      summary: "Data-driven problem solver with an engineering mindset. Skilled in Python, SQL, Power BI, and R for transforming complex data into actionable insights. Experienced in visualization, forecasting, and business reporting that connect technical detail to strategic outcomes.",
+      cv: "DATA_ANALYST_CV.pdf",
+      projects: [
+        {name: "Bristol Airbnb Market Analysis", desc: "Analyzed Airbnb market pricing and demand trends using SQL, Tableau, and Power BI. Delivered insights showing seasonal pricing patterns and high-demand areas like Clifton. <a href='https://github.com/Kaung31/Bristol-Airbnb-Analysis' target='_blank'>View on GitHub</a>"},
+        {name: "Global Superstore Analytics", desc: "Built Power BI dashboards using DAX to visualize regional sales and profit KPIs. Identified the APAC region as a key revenue driver."},
+        {name: "E-commerce Customer Behavior Analysis", desc: "Processed 390k+ records with SQL and Python to segment customers (RFM model). Built a recommendation engine using Apriori for cross-selling."},
+        {name: "House Price Forecasting", desc: "Trained ML models (XGBoost, Random Forest, Linear Regression) to forecast 2024 Bristol house prices. Achieved ~£156K MAE across 30+ postcode areas."}
+      ],
+      skills: {
+        "Analytics & Tools": ["SQL", "Python", "Power BI", "Tableau", "Excel", "R"],
+        "Statistical Methods": ["Descriptive Statistics", "A/B Testing", "Regression", "Hypothesis Testing"],
+        "Data Handling": ["Data Cleaning", "ETL", "Data Visualization", "Dashboard Design"]
+      },
+      certs: [
+        "BEng (Hons) Robotics Engineering, University of West of England (First Class Honours)",
+        "LinkedIn Learning Certifications — Data Analytics & Visualization"
+      ]
+    };
+
+    /* ======== DOM ELEMENTS ======== */
+    const roboticsBtn = document.getElementById("roboticsBtn");
+    const dataBtn = document.getElementById("dataBtn");
+    const heroDesc = document.getElementById("heroDesc");
+    const profileSummary = document.getElementById("profileSummary");
+    const projectList = document.getElementById("projectList");
+    const skillList = document.getElementById("skillList");
+    const certList = document.getElementById("certList");
+    const cvBtn = document.getElementById("cvBtn");
+    const sections = document.querySelectorAll("section");
+
+    /* ======== FUNCTIONS ======== */
+    function renderProfile(data, type) {
+      heroDesc.textContent = data.desc;
+      profileSummary.textContent = data.summary;
+
+      projectList.innerHTML = data.projects.map(p => `
+        <div class="card">
+          <h3>${p.name}</h3>
+          <p>${p.desc}</p>
+        </div>
+      `).join("");
+
+      skillList.innerHTML = Object.entries(data.skills)
+        .map(([group, items]) => `
+          <div class="card">
+            <h3>${group}</h3>
+            <div class="skills-group">
+              ${items.map(i => `<span class="skill-tag">${i}</span>`).join("")}
+            </div>
+          </div>
+        `).join("");
+
+      certList.innerHTML = data.certs.map(c => `<div class="card">${c}</div>`).join("");
+      cvBtn.textContent = "Download " + (type === "robotics" ? "Robotics CV" : "Data Analyst CV");
+      cvBtn.onclick = () => window.open(data.cv, "_blank");
+    }
+
+    /* ======== ANIMATED SWITCH ======== */
+    function switchProfile(profileType) {
+      sections.forEach(sec => sec.classList.add("fade-out"));
+      setTimeout(() => {
+        renderProfile(profileType === "robotics" ? roboticsData : dataAnalystData, profileType);
+        sections.forEach(sec => sec.classList.remove("fade-out"));
+      }, 400);
+    }
+
+    /* ======== INITIAL LOAD ======== */
+    renderProfile(roboticsData, "robotics");
+    roboticsBtn.onclick = () => switchProfile("robotics");
+    dataBtn.onclick = () => switchProfile("data");
+  </script>
+</body>
+</html>
