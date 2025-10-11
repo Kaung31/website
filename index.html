@@ -17,200 +17,220 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
-        /* CSS Variables for a stable dark theme, professional colors */
         :root {
-            --bg-main: #171923; /* Softer Dark Gray/Navy */
-            --bg-nav: #161B22;
-            --bg-card: #161B22; 
-            --text-main: #E2E8F0; /* Muted Off-White */
-            --text-muted: #8b949e;
-            --accent-blue: #89B4F8; /* Soft Light Blue for H1, H3, skill bars, hero buttons */
-            --accent-teal: #32d99d; /* Muted Cyan/Tech Green for H2, links, active buttons */
-            --border-color: #2D3748; /* Dark border for separation */
-        }
-
-        body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--bg-main);
-            color: var(--text-main);
-            line-height: 1.6;
-            scroll-behavior: smooth;
-        }
-
-        a { color: var(--accent-teal); text-decoration: none; transition: color 0.3s ease; }
-        a:hover { color: var(--accent-blue); }
-
-        /* H1 (Hero Title) uses soft blue */
-        h1 {
-            color: var(--accent-blue); 
-            margin-bottom: 0.5em;
+          --bg-main: #171923; 
+          --bg-nav: #161B22;
+          --bg-card: #161B22;
+          --text-main: #E2E8F0;
+          --text-muted: #8b949e;
+          --accent-blue: #89B4F8; 
+          --accent-teal: #32d99d;
+          --border-color: #2D3748;
         }
         
-        /* H2 (Section Titles) uses teal/green */
+        body {
+          margin: 0;
+          font-family: 'Poppins', sans-serif;
+          background-color: var(--bg-main);
+          color: var(--text-main);
+          line-height: 1.6;
+          scroll-behavior: smooth;
+        }
+        
+        a { color: var(--accent-teal); text-decoration: none; transition: color 0.3s ease; }
+        a:hover { color: var(--accent-blue); }
+        
+        /* ===== HEADINGS ===== */
+        h1, h2, h3 {
+          font-weight: 600;
+          margin-bottom: 0.5em;
+        }
+        h1 { color: var(--text-main); }
         h2 {
-            color: var(--accent-teal); 
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding-bottom: 5px;
-            border-bottom: 1px solid var(--border-color);
-            margin-top: 40px;
+          color: var(--accent-teal);
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          padding-bottom: 5px;
+          border-bottom: 1px solid var(--border-color);
+          margin-top: 40px;
+          font-size: 1.4rem;
+          letter-spacing: 0.5px;
+          text-transform: uppercase;
+          position: relative;
         }
-
-        /* H3 (Project/Skill Category Titles) uses soft blue */
-        h3 {
-            color: var(--accent-blue);
-            margin-bottom: 0.5em;
+        h2::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -3px;
+          width: 60px;
+          height: 3px;
+          background: linear-gradient(90deg, var(--accent-teal), var(--accent-blue));
+          border-radius: 2px;
         }
-
+        h3 { color: var(--text-main); }
+        
+        /* ===== SECTIONS ===== */
         section {
-            max-width: 900px;
-            margin: 60px auto;
-            padding: 0 20px;
-            transition: opacity 0.5s ease;
+          max-width: 900px;
+          margin: 60px auto;
+          padding: 0 20px;
+          transition: opacity 0.5s ease;
         }
-
         .center { text-align: center; }
-
-        /* --- STICKY NAVIGATION --- */
+        
+        /* ===== NAVBAR ===== */
         nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: var(--bg-nav);
-            padding: 15px 40px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.4);
-            position: sticky;
-            top: 0;
-            z-index: 10;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          background: var(--bg-nav);
+          padding: 15px 40px;
+          box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+          position: sticky;
+          top: 0;
+          z-index: 10;
         }
         nav h1 { font-size: 1.4rem; color: var(--accent-teal); margin: 0; }
         nav a { color: var(--text-main); margin-left: 20px; }
         nav a:hover { color: var(--accent-teal); }
-
-        /* --- HERO BUTTONS --- */
+        
+        /* ===== HERO SECTION ===== */
+        #hero h1 {
+          font-size: 2.3rem;
+          font-weight: 700;
+          letter-spacing: 0.5px;
+          color: var(--text-main);
+        }
+        #hero em {
+          color: var(--accent-teal);
+          font-style: normal;
+          font-weight: 500;
+        }
         .hero-btn {
-            background: var(--accent-blue);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-size: 1rem;
-            margin: 5px;
-            transition: transform 0.2s ease, opacity 0.3s ease, background 0.3s ease;
+          background: var(--accent-teal);
+          color: white;
+          border: none;
+          border-radius: 8px;
+          padding: 10px 20px;
+          cursor: pointer;
+          font-size: 1rem;
+          margin: 5px;
+          transition: transform 0.2s ease, opacity 0.3s ease, background 0.3s ease;
         }
         .hero-btn:hover {
-            transform: scale(1.05);
-            opacity: 0.9;
+          transform: scale(1.05);
+          opacity: 0.9;
+          background: var(--accent-blue);
         }
         .hero-btn.active {
-            background: var(--accent-teal);
-            border: 2px solid var(--accent-blue);
-            transform: scale(1.03); 
-            box-shadow: 0 0 15px rgba(50, 217, 157, 0.3); /* Muted Teal glow on active */
-        }
-
-        /* --- CARD STYLES --- */
-        .card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-top: 3px solid var(--accent-blue); /* Accent line uses NEW soft blue */
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 25px; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(50, 217, 157, 0.2); /* Teal glow on hover */
-        }
-
-        /* --- PROJECT EXPANSION (CUSTOM ACCORDION) --- */
-        .project-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            padding: 5px 0;
-            margin-bottom: 10px;
-        }
-        .project-title {
-            color: var(--accent-blue); /* Project Titles use NEW soft blue */
-            margin: 0;
-            font-weight: 600;
-        }
-        .project-toggle-icon {
-            transition: transform 0.3s ease;
-        }
-        .project-content {
-            overflow: hidden;
-            transition: max-height 0.4s ease-in-out;
-            max-height: 0; /* Initially hidden */
-        }
-        .project-content p, .project-links {
-            padding: 5px 0;
-            border-top: 1px dashed var(--border-color);
-            margin-top: 10px;
-        }
-        .project-links a {
-            margin-right: 15px;
-            font-size: 0.95rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        /* --- SKILLS VISUALIZATION --- */
-        .skills-group {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        .skill-bar-container {
-            display: grid;
-            grid-template-columns: 150px 1fr;
-            gap: 15px;
-            align-items: center;
-        }
-        .skill-name {
-            font-weight: 600;
-            color: var(--accent-teal); /* Skill NAMES still use Teal for contrast with the Blue bar fill */
-            font-size: 0.95rem;
-        }
-        .skill-bar {
-            background: var(--border-color);
-            height: 10px;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-        .skill-bar-fill {
-            height: 100%;
-            background: var(--accent-blue); /* Fill uses NEW soft blue */
-            transition: width 1s ease-out;
+          background: var(--accent-blue);
+          border: 2px solid var(--accent-teal);
+          transform: scale(1.03);
+          box-shadow: 0 0 15px rgba(50, 217, 157, 0.3);
         }
         
-        /* --- FOOTER & MISC --- */
+        /* ===== CARDS ===== */
+        .card {
+          background: var(--bg-card);
+          border: 1px solid var(--border-color);
+          border-top: 3px solid var(--accent-teal);
+          border-radius: 8px;
+          padding: 20px;
+          margin-bottom: 25px;
+          box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 15px rgba(50, 217, 157, 0.2);
+        }
+        
+        /* ===== PROJECT ACCORDION ===== */
+        .project-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          cursor: pointer;
+          padding: 5px 0;
+          margin-bottom: 10px;
+        }
+        .project-title {
+          color: var(--text-main);
+          font-weight: 600;
+        }
+        .project-toggle-icon {
+          transition: transform 0.3s ease;
+        }
+        .project-content {
+          overflow: hidden;
+          transition: max-height 0.4s ease-in-out;
+          max-height: 0;
+        }
+        .project-content p, .project-links {
+          padding: 5px 0;
+          border-top: 1px dashed var(--border-color);
+          margin-top: 10px;
+        }
+        .project-links a {
+          margin-right: 15px;
+          font-size: 0.95rem;
+          display: inline-flex;
+          align-items: center;
+          gap: 5px;
+        }
+        
+        /* ===== SKILLS ===== */
+        .skills-group {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+        }
+        .skill-bar-container {
+          display: grid;
+          grid-template-columns: 150px 1fr;
+          gap: 15px;
+          align-items: center;
+        }
+        .skill-name {
+          font-weight: 600;
+          color: var(--text-main);
+          font-size: 0.95rem;
+        }
+        .skill-bar {
+          background: var(--border-color);
+          height: 10px;
+          border-radius: 5px;
+          overflow: hidden;
+        }
+        .skill-bar-fill {
+          height: 100%;
+          background: var(--accent-blue);
+          transition: width 1s ease-out;
+        }
+        
+        /* ===== FOOTER ===== */
         footer {
-            text-align: center;
-            padding: 25px;
-            background: var(--bg-nav);
-            margin-top: 60px;
-            color: var(--text-muted);
-            font-size: 0.9rem;
+          text-align: center;
+          padding: 25px;
+          background: var(--bg-nav);
+          margin-top: 60px;
+          color: var(--text-muted);
+          font-size: 0.9rem;
         }
         .fade-out { opacity: 0; }
         
-        /* --- MOBILE RESPONSIVENESS --- */
+        /* ===== MOBILE ===== */
         @media (max-width: 768px) {
-            nav { flex-direction: column; padding: 10px 20px; }
-            nav h1 { margin-bottom: 10px; }
-            nav div a { margin: 0 8px; font-size: 0.9rem; }
-            section { margin: 40px auto; }
-            .hero-btn { display: block; width: 100%; margin: 10px 0; }
-            .skill-bar-container { grid-template-columns: 100px 1fr; }
+          nav { flex-direction: column; padding: 10px 20px; }
+          nav h1 { margin-bottom: 10px; }
+          nav div a { margin: 0 8px; font-size: 0.9rem; }
+          section { margin: 40px auto; }
+          .hero-btn { display: block; width: 100%; margin: 10px 0; }
+          .skill-bar-container { grid-template-columns: 100px 1fr; }
+        }
+
         }
     </style>
 </head>
