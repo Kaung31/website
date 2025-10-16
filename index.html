@@ -574,6 +574,9 @@
 
                         // Expand current
                         content.style.maxHeight = content.scrollHeight + "px";
+                        setTimeout(() => {
+                          content.style.maxHeight = "none";
+                        }, 400); // let transition finish, then allow full auto height
                         icon.style.transform = 'rotate(180deg)';
                     }
                 };
