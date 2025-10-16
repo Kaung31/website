@@ -556,7 +556,7 @@
         }
 
         // --- INTERACTION LOGIC ---
-
+        /*
         function setupProjectToggles() {
             document.querySelectorAll('.project-header').forEach(header => {
                 header.onclick = function() {
@@ -581,7 +581,54 @@
                     }
                 };
             });
-        }
+        } */
+
+        function setupProjectToggles() {
+                document.querySelectorAll('.project-header').forEach(header => {
+                  header.onclick = function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('.project-toggle-icon');
+              
+                    if (content.style.maxHeight && content.style.maxHeight !== "none") {
+                      // Collapse
+                      content.style.maxHeight = null;
+                      icon.style.transform = 'rotate(0deg)';
+                    } else {
+                      // Collapse all others
+                      document.querySelectorAll('.project-content').forEach(c => c.style.maxHeight = null);
+                      document.querySelectorAll('.project-toggle-icon').forEach(i => i.style.transform = 'rotate(0deg)');
+              
+                      // Wait for all images to load before measuring height
+                      const images = content.querySelectorAll('img');
+                      let loaded = 0;
+                      if (images.length > 0) {
+                        images.forEach(img => {
+                          if (img.complete) {
+                            loaded++;
+                            if (loaded === images.length) expandContent();
+                          } else {
+                            img.onload = () => {
+                              loaded++;
+                              if (loaded === images.length) expandContent();
+                            };
+                          }
+                        });
+                      } else {
+                        expandContent(); // no images, expand immediately
+                      }
+              
+                      function expandContent() {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                        setTimeout(() => {
+                          content.style.maxHeight = "none";
+                        }, 400); // after transition
+                        icon.style.transform = 'rotate(180deg)';
+                      }
+                    }
+                  };
+                });
+              }
+
 
         function switchProfile(type) {
             sections.forEach(sec => sec.classList.add("fade-out"));
