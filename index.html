@@ -1,269 +1,346 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kaung Min Khant | Robotics & Data Analytics Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kaung Min Khant | Robotics & Data Analytics Portfolio</title>
 
-    <!-- ===== META TAGS ===== -->
-    <meta name="description" content="Portfolio of Kaung Min Khant — Robotics Engineer & Data Analyst. Explore projects in robotics, AI, and data analytics." />
-    <meta name="author" content="Kaung Min Khant" />
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <meta name="description" content="Portfolio of Kaung Min Khant — Robotics Engineer & Data Analyst. Explore projects in robotics, AI, and data analytics." />
+  <meta name="author" content="Kaung Min Khant" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <script src="https://unpkg.com/lucide@latest"></script>
 
-    <!-- Lucide Icons for professionalism -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
-    <!-- ===== STYLE: PROFESSIONAL DARK THEME & VISUAL SKILLS ===== -->
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+    :root {
+      --bg-main: #171923;
+      --bg-nav: #161B22;
+      --bg-card: #161B22;
+      --text-main: #E2E8F0;
+      --text-muted: #8b949e;
+      --accent-blue: #89B4F8;
+      --accent-teal: #32d99d;
+      --border-color: #2D3748;
+    }
 
-        /* CSS Variables for a stable dark theme, professional colors */
-        :root {
-            --bg-main: #171923; 
-            --bg-nav: #161B22;
-            --bg-card: #161B22; 
-            --text-main: #E2E8F0; 
-            --text-muted: #8b949e;
-            --accent-blue: #89B4F8; /* Soft Light Blue for H1, H3, skill bars, hero buttons */
-            --accent-teal: #32d99d; /* Muted Cyan/Tech Green for H2, links, active buttons */
-            --border-color: #2D3748; 
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        html {
-            scroll-behavior: smooth;
-        }
+    section {
+      scroll-margin-top: 80px;
+    }
 
-        section {
-            scroll-margin-top: 80px;
-        }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
 
-        body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--bg-main);
-            color: var(--text-main);
-            line-height: 1.6;
-        }
+    a { color: var(--accent-teal); text-decoration: none; transition: color 0.3s ease; }
+    a:hover { color: var(--accent-blue); }
 
-        a { color: var(--accent-teal); text-decoration: none; transition: color 0.3s ease; }
-        a:hover { color: var(--accent-blue); }
+    /* ===== HEADINGS ===== */
+    h1, h2, h3 {
+      font-weight: 600;
+      margin-bottom: 0.5em;
+    }
+    h1 { color: var(--text-main); }
+    h2 {
+      color: var(--accent-teal);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid var(--border-color);
+      margin-top: 40px;
+      font-size: 1.4rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      position: relative;
+    }
+    h2::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-teal), var(--accent-blue));
+      border-radius: 2px;
+    }
+    h3 { color: var(--text-main); }
+    .project-header h3 { font-weight: 500; }
 
-        /* ===== HEADINGS (Soft Blue for H1/H3, Teal for H2) ===== */
-        h1, h2, h3 {
-            font-weight: 600;
-            margin-bottom: 0.5em;
-        }
-        h1 { color: var(--accent-blue); font-size: 2.4rem; font-weight: 700; letter-spacing: 0.5px; }
-        
-        h2 {
-            color: var(--accent-teal); /* Teal for main sections */
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding-bottom: 5px;
-            border-bottom: 1px solid var(--border-color);
-            margin-top: 40px;
-            font-size: 1.4rem;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            position: relative;
-        }
-        h2::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: -3px;
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent-teal), var(--accent-blue));
-            border-radius: 2px;
-        }
+    section {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+      transition: opacity 0.5s ease;
+    }
+    .center { text-align: center; }
 
-        h3 { color: var(--accent-blue); margin-bottom: 0.5em; } /* Soft Blue for Sub-titles */
-        .project-header h3 { color: var(--accent-blue); font-weight: 600; margin: 0; }
-        
-        section { max-width: 900px; margin: 60px auto; padding: 0 20px; transition: opacity 0.5s ease; }
-        .center { text-align: center; }
+    /* ===== NAVBAR ===== */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg-nav);
+      padding: 15px 40px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav h1 { font-size: 1.4rem; color: var(--accent-teal); margin: 0; }
+    nav a { color: var(--text-main); margin-left: 20px; }
+    nav a:hover { color: var(--accent-teal); }
 
-        /* ===== NAVBAR ===== */
-        nav {
-            display: flex; justify-content: space-between; align-items: center;
-            background: var(--bg-nav); padding: 15px 40px; box-shadow: 0 2px 10px rgba(0,0,0,0.4);
-            position: sticky; top: 0; z-index: 10;
-        }
-        nav h1 { font-size: 1.4rem; color: var(--accent-teal); margin: 0; }
-        nav a { color: var(--text-main); margin-left: 20px; }
-        nav a:hover { color: var(--accent-teal); }
+    /* ===== HERO ===== */
+    #hero h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: var(--text-main);
+    }
+    #hero em {
+      color: var(--accent-teal);
+      font-style: normal;
+      font-weight: 500;
+    }
 
-        /* ===== HERO ===== */
-        #hero em { color: var(--accent-teal); font-style: normal; font-weight: 500; }
+    .hero-btn {
+      background: var(--accent-teal);
+      color: #D3D3D3;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 1rem;
+      margin: 5px;
+      transition: transform 0.2s ease, opacity 0.3s ease, background 0.3s ease;
+    }
+    .hero-btn:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+      background: var(--accent-blue);
+    }
+    .hero-btn.active {
+      background: var(--accent-blue);
+      border: 2px solid var(--accent-teal);
+      transform: scale(1.03);
+      box-shadow: 0 0 15px rgba(50, 217, 157, 0.3);
+    }
 
-        .hero-btn {
-            background: var(--accent-teal); color: white; border: none; border-radius: 8px;
-            padding: 10px 20px; cursor: pointer; font-size: 1rem; margin: 5px;
-            transition: transform 0.2s ease, opacity 0.3s ease, background 0.3s ease;
-        }
-        .hero-btn:hover { transform: scale(1.05); opacity: 0.9; background: var(--accent-blue); }
-        .hero-btn.active { background: var(--accent-blue); border: 2px solid var(--accent-teal); transform: scale(1.03); box-shadow: 0 0 15px rgba(50, 217, 157, 0.3); }
+    /* ===== CARDS ===== */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-top: 3px solid var(--accent-teal);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(50, 217, 157, 0.2);
+    }
 
-        /* ===== CARDS & PROJECTS ===== */
-        .card {
-            background: var(--bg-card); border: 1px solid var(--border-color);
-            border-top: 3px solid var(--accent-teal); border-radius: 8px;
-            padding: 20px; margin-bottom: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 8px 15px rgba(50, 217, 157, 0.2); }
+    /* ===== PROJECTS ===== */
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      padding: 5px 0;
+      margin-bottom: 10px;
+    }
+    .project-title { color: var(--text-main); font-weight: 600; }
+    .project-toggle-icon { transition: transform 0.3s ease; }
+    .project-content {
+      overflow: hidden;
+      transition: max-height 0.4s ease-in-out;
+      max-height: 0;
+    }
+    .project-content p, .project-links {
+      padding: 5px 0;
+      border-top: 1px dashed var(--border-color);
+      margin-top: 10px;
+    }
+    .project-links a {
+      margin-right: 15px;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
 
-        .project-header {
-            display: flex; justify-content: space-between; align-items: center;
-            cursor: pointer; padding: 5px 0; margin-bottom: 10px;
-        }
-        .project-toggle-icon { transition: transform 0.3s ease; }
-        .project-content { overflow: hidden; transition: max-height 0.4s ease-in-out; max-height: 0; }
-        .project-details { 
-            padding-top: 10px; 
-            border-top: 1px dashed var(--border-color); 
-            margin-top: 10px;
-        }
-        .project-links a { margin-right: 15px; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 5px; }
+    /* ===== SKILLS ===== */
+    .skills-group {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .skill-bar-container {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 15px;
+      align-items: center;
+    }
+    .skill-name {
+      font-weight: 600;
+      color: var(--text-main);
+      font-size: 0.95rem;
+    }
+    .skill-bar {
+      background: var(--border-color);
+      height: 10px;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .skill-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent-teal), var(--accent-blue));
+      transition: width 1s ease-out;
+    }
 
-        /* Dashboard and Image styles */
-        .project-media-container {
-            width: 100%;
-            height: auto; 
-            margin-top: 15px;
-            border-radius: 5px;
-            overflow: hidden;
-            background: var(--bg-main);
-        }
-        .project-media-container iframe {
-            width: 100%;
-            height: 500px; /* Fixed height for interaction */
-            border: 1px solid var(--border-color);
-        }
-        .project-media-container img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            border: 1px solid var(--border-color);
-        }
-        .project-media-container p {
-             text-align: center; font-style: italic; color: var(--text-muted); font-size: 0.85rem; padding-top: 5px;
-        }
-
-        /* ===== SKILLS ===== */
-        .skills-group { display: flex; flex-direction: column; gap: 15px; }
-        .skill-bar-container { display: grid; grid-template-columns: 150px 1fr; gap: 15px; align-items: center; }
-        .skill-name { font-weight: 600; color: var(--text-main); font-size: 0.95rem; }
-        .skill-bar { background: var(--border-color); height: 10px; border-radius: 5px; overflow: hidden; }
-        .skill-bar-fill { height: 100%; background: linear-gradient(90deg, var(--accent-teal), var(--accent-blue)); transition: width 1s ease-out; }
-        
-        /* ===== SOFT SKILLS ===== */
-        #soft-skills .skills-group { flex-direction: row; flex-wrap: wrap; gap: 12px; justify-content: flex-start; }
-        #soft-skills .skill-tag { background: #1f2430; color: var(--accent-teal); padding: 6px 12px; border-radius: 6px; font-size: 0.9rem; transition: background 0.3s ease; }
-        #soft-skills .skill-tag:hover { background: #2d333b; }
-        #soft-skills { margin-bottom: 20px; }
+    /* ===== SOFT SKILLS ===== */
+    #soft-skills .skills-group {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+    #soft-skills .skill-tag {
+      background: #1f2430;
+      color: var(--accent-teal);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      transition: background 0.3s ease;
+    }
+    #soft-skills .skill-tag:hover {
+      background: #2d333b;
+    }
+    /* === Soft Skills Layout Fix === */
+    #soft-skills {
+      margin-bottom: 20px; /* reduce vertical space below */
+    }
+    #soft-skills .skills-group {
+      margin-top: 10px; /* tighter spacing between title and tags */
+      justify-content: flex-start; /* align tags to left instead of center */
+    }
 
 
-        /* ===== FOOTER & MOBILE RESPONSIVENESS ===== */
-        footer { text-align: center; padding: 25px; background: var(--bg-nav); margin-top: 60px; color: var(--text-muted); font-size: 0.9rem; }
-        
-        @media (max-width: 768px) {
-            nav { flex-direction: column; padding: 10px 20px; }
-            nav h1 { margin-bottom: 10px; }
-            nav div a { margin: 0 8px; font-size: 0.9rem; }
-            section { margin: 40px auto; }
-            .hero-btn { display: block; width: 100%; margin: 10px 0; }
-            .skill-bar-container { grid-template-columns: 100px 1fr; }
-            .project-media-container iframe { height: 300px; }
-            #soft-skills .skills-group { justify-content: center; }
-        }
-    </style>
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: var(--bg-nav);
+      margin-top: 60px;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .fade-out { opacity: 0; }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 768px) {
+      nav { flex-direction: column; padding: 10px 20px; }
+      nav h1 { margin-bottom: 10px; }
+      nav div a { margin: 0 8px; font-size: 0.9rem; }
+      section { margin: 40px auto; }
+      .hero-btn { display: block; width: 100%; margin: 10px 0; }
+      .skill-bar-container { grid-template-columns: 100px 1fr; }
+    }
+  </style>
 </head>
+
 <body>
+  <!-- NAV -->
+  <nav>
+    <h1>Kaung Min Khant</h1>
+    <div>
+      <a href="#summary">Summary</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#certs">Education</a>
+    </div>
+  </nav>
 
-    <!-- Nav Bar -->
-    <nav>
-        <h1>Kaung Min Khant</h1>
-        <div>
-            <a href="#summary">Summary</a>
-            <a href="#projects">Projects</a>
-            <a href="#skills">Skills</a>
-            <a href="#certs">Education</a>
-        </div>
-    </nav>
+  <!-- HERO -->
+  <section class="center" id="hero">
+    <h1>Hi, I’m Kaung Min Khant</h1>
+    <p><em>Robotics Engineer & Data Analyst</em></p>
+    <p style="max-width:600px; margin:10px auto; color: var(--text-muted);">
+      Explore my portfolio — you can view my work in <strong>Robotics Engineering</strong> or <strong>Data Analytics</strong> using the buttons below.
+    </p>
+    <div style="margin-top:20px;">
+      <button class="hero-btn" id="roboticsBtn">🤖 View Robotics Profile</button>
+      <button class="hero-btn" id="dataBtn">📊 View Data Analyst Profile</button>
+    </div>
+    <p style="margin-top:20px; font-size: 0.95rem;">
+      <a href="mailto:kaungmin3112002@gmail.com">
+        <i data-lucide="mail" style="width: 16px; height: 16px;"></i> kaungmin3112002@gmail.com
+      </a>
+      <span style="color: var(--border-color);">|</span>
+      <a href="https://www.linkedin.com/in/kaungminkhant/">
+        <i data-lucide="linkedin" style="width: 16px; height: 16px;"></i> LinkedIn
+      </a>
+      <span style="color: var(--border-color);">|</span>
+      <a href="https://github.com/Kaung31">
+        <i data-lucide="github" style="width: 16px; height: 16px;"></i> GitHub
+      </a>
+    </p>
+  </section>
 
-    <!-- HERO SECTION -->
-    <section class="center" id="hero">
-        <h1>Hi, I’m Kaung Min Khant</h1>
-        <p><em>Robotics Engineer & Data Analyst</em></p>
-        <p style="max-width:600px; margin:10px auto; color: var(--text-muted);">
-            Explore my portfolio — you can view my work in <strong>Robotics Engineering</strong> or <strong>Data Analytics</strong> using the buttons below.
-        </p>
+  <!-- PROFILE SUMMARY -->
+  <section id="summary">
+    <h2><i data-lucide="user-check"></i> Profile Summary</h2>
+    <p id="profileSummary"></p>
+  </section>
 
-        <div style="margin-top:20px;">
-            <button class="hero-btn" id="roboticsBtn">🤖 View Robotics Profile</button>
-            <button class="hero-btn" id="dataBtn">📊 View Data Analyst Profile</button>
-        </div>
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2><i data-lucide="hard-hat"></i> Key Projects</h2>
+    <div id="projectList"></div>
+  </section>
 
-        <p style="margin-top:20px; font-size: 0.95rem;">
-            <a href="mailto:kaungmin3112002@gmail.com">
-                <i data-lucide="mail" style="width: 16px; height: 16px;"></i> kaungmin3112002@gmail.com
-            </a> 
-            <span style="color: var(--border-color);">|</span>
-            <a href="https://www.linkedin.com/in/kaungminkhant/">
-                <i data-lucide="linkedin" style="width: 16px; height: 16px;"></i> LinkedIn
-            </a> 
-            <span style="color: var(--border-color);">|</span>
-            <a href="https://github.com/Kaung31">
-                <i data-lucide="github" style="width: 16px; height: 16px;"></i> GitHub
-            </a>
-        </p>
-    </section>
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2><i data-lucide="code"></i> Technical Skills</h2>
+    <div id="skillList"></div>
+  </section>
 
-    <!-- PROFILE SUMMARY -->
-    <section id="summary">
-        <h2><i data-lucide="user-check"></i> Profile Summary</h2>
-        <p id="profileSummary"></p>
-    </section>
+  <!-- SOFT SKILLS -->
+  <section id="soft-skills">
+    <h2><i data-lucide="briefcase"></i> Soft & Language Skills</h2>
+    <div class="skills-group">
+      <span class="skill-tag">Critical Thinking</span>
+      <span class="skill-tag">Problem Solving</span>
+      <span class="skill-tag">Team Leadership</span>
+      <span class="skill-tag">English (Fluent)</span>
+      <span class="skill-tag">Chinese (Fluent)</span>
+    </div>
+  </section>
 
-    <!-- PROJECTS -->
-    <section id="projects">
-        <h2><i data-lucide="hard-hat"></i> Key Projects</h2>
-        <div id="projectList"></div>
-    </section>
+  <!-- EDUCATION -->
+  <section id="certs">
+    <h2><i data-lucide="graduation-cap"></i> Education & Certificates</h2>
+    <div id="certList"></div>
+  </section>
 
-    <!-- TECHNICAL SKILLS -->
-    <section id="skills">
-        <h2><i data-lucide="code"></i> Technical Skills</h2>
-        <div id="skillList"></div>
-    </section>
-
-    <!-- SOFT SKILLS (Static) -->
-    <section id="soft-skills">
-        <h2><i data-lucide="briefcase"></i> Soft & Language Skills</h2>
-        <div class="skills-group">
-            <span class="skill-tag">Critical Thinking</span>
-            <span class="skill-tag">Problem Solving</span>
-            <span class="skill-tag">Team Leadership</span>
-            <span class="skill-tag">English (Fluent)</span>
-            <span class="skill-tag">Chinese (Fluent)</span>
-        </div>
-    </section>
-
-    <!-- EDUCATION & CERTIFICATES -->
-    <section id="certs">
-        <h2><i data-lucide="graduation-cap"></i> Education & Certificates</h2>
-        <div id="certList"></div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <p style="margin-bottom: 5px;">© 2025 Kaung Min Khant | Built with HTML, JS, & Deployed on Vercel</p>
-        <p style="font-size: 0.8rem;">Icons by Lucide.</p>
-    </footer>
-
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Kaung Min Khant | Built with HTML, JS, & Deployed on Vercel</p>
+    <p style="font-size: 0.8rem;">Icons by Lucide.</p>
+  </footer>
+    
     <script>
         // --- DATA STRUCTURES ---
         const roboticsData = {
@@ -411,53 +488,21 @@
         }
 
         function renderProjects(data) {
-            return data.projects.map((p, index) => {
-                let mediaContent = '';
-                
-                // Prioritize static image proof over live embed for stability
-                if (p.image_url) {
-                    // Embeds a static screenshot
-                    mediaContent = `
-                        <div class="project-media-container">
-                            <img src="${p.image_url}" alt="Screenshot of ${p.name} Project" onerror="this.src='https://placehold.co/600x300/171923/E2E8F0?text=Image+Missing';">
-                            <p style="text-align: center; font-style: italic; color: var(--text-muted); font-size: 0.85rem; padding-top: 5px;">Static Screenshot: ${p.image_url}</p>
+            return data.projects.map((p, index) => `
+                <div class="card project-card">
+                    <div class="project-header" data-project-index="${index}">
+                        <h3 class="project-title">${p.name}</h3>
+                        <i class="project-toggle-icon" data-lucide="chevron-down"></i>
+                    </div>
+                    <div class="project-content" data-content-index="${index}">
+                        <p style="color: var(--text-muted);">${p.description}</p>
+                        <p><strong>Tools Used:</strong> ${p.tools}</p>
+                        <div class="project-links">
+                            ${p.github ? `<a href="${p.github}" target="_blank"><i data-lucide="github" style="width: 16px; height: 16px;"></i> GitHub Repo</a>` : ''}
+                            ${p.live ? `<a href="${p.live}" target="_blank"><i data-lucide="external-link" style="width: 16px; height: 16px;"></i> Live Demo/Dashboard</a>` : ''}
                         </div>
-                    `;
-                } else if (p.live_embed_url) {
-                    // Embeds the live interactive dashboard (used only if image is not set)
-                    mediaContent = `
-                        <div class="project-media-container">
-                            <iframe 
-                                src="${p.live_embed_url}" 
-                                frameborder="0" 
-                                allowfullscreen="true" 
-                                mozallowfullscreen="true" 
-                                webkitallowfullscreen="true">
-                            </iframe>
-                            <p style="text-align: center; font-style: italic; color: var(--text-muted); font-size: 0.85rem; padding-top: 5px;">Interactive Dashboard Embed</p>
-                        </div>
-                    `;
-                }
-
-
-                return `
-                    <div class="card project-card">
-                        <div class="project-header" data-project-index="${index}">
-                            <h3 class="project-title">${p.name}</h3>
-                            <i class="project-toggle-icon" data-lucide="chevron-down"></i>
-                        </div>
-                        <div class="project-content" data-content-index="${index}">
-                            <div class="project-details">
-                                <p style="color: var(--text-muted);">${p.description}</p>
-                                <p><strong>Tools Used:</strong> ${p.tools}</p>
-                                <div class="project-links">
-                                    ${p.github ? `<a href="${p.github}" target="_blank"><i data-lucide="github" style="width: 16px; height: 16px;"></i> GitHub Repo</a>` : ''}
-                                </div>
-                            </div>
-                            ${mediaContent}
-                        </div>
-                    </div>`;
-            }).join("");
+                    </div>
+                </div>`).join("");
         }
 
         function renderCerts(data) {
@@ -505,6 +550,7 @@
         function switchProfile(type) {
             sections.forEach(sec => sec.classList.add("fade-out"));
             
+            // Toggle active button state
             roboticsBtn.classList.remove('active');
             dataBtn.classList.remove('active');
             if (type === "robotics") {
@@ -524,7 +570,7 @@
             // Initialize with Robotics profile
             switchProfile("robotics"); 
             
-            // Add event listeners 
+            // Add event listeners (though already assigned inline, for robustness)
             roboticsBtn.onclick = () => switchProfile("robotics");
             dataBtn.onclick = () => switchProfile("data");
         }
