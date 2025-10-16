@@ -345,41 +345,37 @@
         // --- DATA STRUCTURES ---
         const roboticsData = {
             summary: "Robotics Engineer (BEng, First Class Honours) with hands-on experience in ROS, STM32, and C++ for real-time robotic applications. Skilled in robot perception, autonomous navigation, and control systems. Passionate about solving real-world problems through intelligent robotics and computer vision.",
+            cv: "Robotics_CV.pdf",
             projects: [
                 { 
                     name: "Driver Fatigue Detection", 
                     tools: "Python, MediaPipe, OpenCV, EAR/MAR", 
                     description: "Developed a real-time driver fatigue detection system using MediaPipe Face Mesh, EAR, MAR, and blink/yawn detection. Implemented adaptive thresholding based on head pose and lighting conditions, achieving 98% accuracy without glasses. (Undergraduate Research Thesis)",
-                    github: "https://github.com/Kaung31/thesis-fatigue-detection" /* Change this to your actual file name if you upload one for this project */
+                    github: "https://github.com/Kaung31/Driver-Fatigue-Detection", live: null
                 },
                 { 
                     name: "Vehicle Detection with YOLOv8", 
                     tools: "Python, YOLOv8, OpenCV, Ultralytics, Streamlit",
                     description: "Trained a custom YOLOv8 object detection model on aerial drone footage (VisDrone dataset) to detect cars, buses, and trucks. Built a real-time video-processing pipeline using Python, OpenCV, and Ultralytics for frame-by-frame inference. Deployed the model using Streamlit on Hugging Face Spaces.",
-                    github: "https://github.com/Kaung31/vehicle_detection" /* Change this to your actual file name if you upload one for this project */
+                    github: "https://github.com/Kaung31/YOLOv8-Vehicle-Detector", live: null
                 },
                 { 
                     name: "Localization & Mapping with ROS", 
                     tools: "ROS, Gazebo, MATLAB, EKF, Particle Filter", 
                     description: "Developed a MATLAB-based control system for TurtleBot3 navigation in ROS/Gazebo, applying velocity motion models and occupancy grid mapping. Implemented EKF and Particle Filter algorithms to fuse LIDAR and odometry data for accurate autonomous localization.",
-                    github: "https://github.com/Kaung31/Localization-Motion-Models-ROS-MATLAB-" /* Change this to your actual file name if you upload one for this project */
+                    github: null, live: null 
                 },
                 { 
                     name: "AL5D Robotic Arm Automation", 
                     tools: "Arduino, C++",
                     description: "Designed a robotic arm control system using Arduino, joysticks, button pins, and LEDs for test tube handling. Programmed precise pick-and-place operations, achieving reliable and repeatable test tube transfers between racks.",
-                },
-                { 
-                    name: "NAO Robot for a Bubble Tea Shop", 
-                    tools: "Choregraphe, Python, Socket Server", 
-                    description: "Programmed a NAO robot using Choregraphe, Python, and a socket server to handle customer orders with speech recognition and gesture-based dialogue. Simulated real-world service by automating payment prompts and creating an engaging, interactive customer experience.",
-                    github: "https://github.com/Kaung31/NAO_BubbleTeaBot",
+                    github: "https://github.com/Kaung31/AL5D-Arm-Control", live: null
                 },
                 { 
                     name: "Micromouse Robotics Challenge", 
                     tools: "STM32, C++, DFS, Flood Fill", 
                     description: "Designed and implemented a maze-solving algorithm using DFS-based exploration and Flood Fill for shortest path computation on STM32. Focused on algorithm development within the team, ensuring adaptability and optimizing speed.", 
-                   
+                    github: null, live: null 
                 },
             ],
             skills: {
@@ -407,33 +403,33 @@
 
         const dataAnalystData = {
             summary: "First Class Honours Engineering graduate with a strong focus on data analytics. Proficient in SQL, Python, Power BI, and Tableau for cleaning data, building dashboards, and drawing out key insights. Focused on turning complex data into clear, actionable findings to support data-driven decisions.",
+            cv: "DATA_ANALYST_CV.pdf",
             projects: [
                 { 
                     name: "Bristol Airbnb Market Analysis", 
                     tools: "SQL, Power BI, Tableau, Excel, R",
                     description: "Analyzed the Bristol Airbnb market to identify pricing trends and demand drivers. Used SQL for data extraction and cleaning, and leveraged Power BI/Tableau to build interactive dashboards. Delivered actionable insights, revealing high-demand areas and seasonal price influence.",
                     github: "https://github.com/Kaung31/Bristol-Airbnb-Analysis",
-                    image_url: "bristol_airbnb_dashboard.png" 
-                },
-                { 
-                    name: "Global Superstore Analytics", 
-                    tools: "SQL, Power BI, DAX, Excel",
-                    description: "Modeled a large retail order dataset and designed a star schema. Used SQL to query KPIs and built a professional Power BI dashboard using DAX measures. Provided data-driven recommendations showing APAC and US regions drive the most revenue.",
-                    github: "https://github.com/Kaung31/global-superstore-analytics",
-                    image_url: "superstore_dashboard.png" 
+                    live: "https://public.tableau.com/views/BristolAirbnbAnalysis/Dashboard"
                 },
                 { 
                     name: "E-commerce Customer Behavior Analysis", 
                     tools: "Python, SQL (PostgreSQL), Tableau, Apriori",
                     description: "Developed an end-to-end data pipeline using Python and SQL (PostgreSQL) to process over 390,000 transactional records. Conducted RFM analysis to segment 4,000+ customers into key behavioral groups. Built a product recommendation engine (Apriori algorithm).",
-                    github: "https://github.com/Kaung31/ecommerce-customer-analysis"
-                  
+                    github: null, live: null 
+                },
+                { 
+                    name: "Global Superstore Analytics", 
+                    tools: "SQL, Power BI, DAX, Excel",
+                    description: "Modeled a large retail order dataset and designed a star schema. Used SQL to query KPIs and built a professional Power BI dashboard using DAX measures. Provided data-driven recommendations showing APAC and US regions drive the most revenue.",
+                    github: "https://github.com/Kaung31/Superstore-Dashboard",
+                    live: "https://app.powerbi.com/view?r=ey..."
                 },
                 { 
                     name: "House Price Forecasting", 
                     tools: "Python, Scikit-learn, XGBoost, Random Forest",
                     description: "Trained XGBoost, Random Forest, and Linear Regression models to forecast 2024 Bristol house prices using historical data. Achieved ~£156K MAE on 2024 predictions across 30+ postcode areas, tuning models with cross-validation.",
-                    github: "https://github.com/Kaung31/bristol_house_price_prediction", 
+                    github: "https://github.com/Kaung31/House-Price-Forecasting", live: null 
                 },
             ],
             skills: {
@@ -491,17 +487,17 @@
             return data.projects.map((p, index) => {
                 let mediaContent = '';
                 
-                // This if condition checks if the project data has an 'image_url' property set.
+                // Prioritize static image proof over live embed for stability
                 if (p.image_url) {
+                    // Embeds a static screenshot
                     mediaContent = `
                         <div class="project-media-container">
-                            <!-- The image source 'src' is set to your uploaded file name (e.g., bristol_airbnb_dashboard.png) -->
                             <img src="${p.image_url}" alt="Screenshot of ${p.name} Project" onerror="this.src='https://placehold.co/600x300/171923/E2E8F0?text=Image+Missing';">
                             <p style="text-align: center; font-style: italic; color: var(--text-muted); font-size: 0.85rem; padding-top: 5px;">Static Screenshot: ${p.image_url}</p>
                         </div>
                     `;
                 } else if (p.live_embed_url) {
-                    // This block is for if you wanted to embed a live interactive dashboard via iframe (we are not using this now).
+                    // Embeds the live interactive dashboard (used only if image is not set)
                     mediaContent = `
                         <div class="project-media-container">
                             <iframe 
@@ -516,13 +512,22 @@
                     `;
                 }
 
-                // ... rest of the function continues below ...
+
                 return `
                     <div class="card project-card">
-                        <!-- ... header content ... -->
+                        <div class="project-header" data-project-index="${index}">
+                            <h3 class="project-title">${p.name}</h3>
+                            <i class="project-toggle-icon" data-lucide="chevron-down"></i>
+                        </div>
                         <div class="project-content" data-content-index="${index}">
-                            <!-- ... project details and links ... -->
-                            ${mediaContent} <!-- This line inserts the image/dashboard into the expanded view -->
+                            <div class="project-details">
+                                <p style="color: var(--text-muted);">${p.description}</p>
+                                <p><strong>Tools Used:</strong> ${p.tools}</p>
+                                <div class="project-links">
+                                    ${p.github ? `<a href="${p.github}" target="_blank"><i data-lucide="github" style="width: 16px; height: 16px;"></i> GitHub Repo</a>` : ''}
+                                </div>
+                            </div>
+                            ${mediaContent}
                         </div>
                     </div>`;
             }).join("");
