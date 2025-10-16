@@ -342,64 +342,132 @@
   </footer>
     
     <script>
+
         // --- DATA STRUCTURES ---
+
         const roboticsData = {
+
             summary: "Robotics Engineer (BEng, First Class Honours) with hands-on experience in ROS, STM32, and C++ for real-time robotic applications. Skilled in robot perception, autonomous navigation, and control systems. Passionate about solving real-world problems through intelligent robotics and computer vision.",
-            cv: "Robotics_CV.pdf",
+
             projects: [
-                { 
-                    name: "Driver Fatigue Detection", 
-                    tools: "Python, MediaPipe, OpenCV, EAR/MAR", 
+
+                {
+
+                    name: "Driver Fatigue Detection",
+
+                    tools: "Python, MediaPipe, OpenCV, EAR/MAR",
+
                     description: "Developed a real-time driver fatigue detection system using MediaPipe Face Mesh, EAR, MAR, and blink/yawn detection. Implemented adaptive thresholding based on head pose and lighting conditions, achieving 98% accuracy without glasses. (Undergraduate Research Thesis)",
-                    github: "https://github.com/Kaung31/Driver-Fatigue-Detection", live: null
+
+                    github: "https://github.com/Kaung31/thesis-fatigue-detection" /* Change this to your actual file name if you upload one for this project */
+
                 },
-                { 
-                    name: "Vehicle Detection with YOLOv8", 
+
+                {
+
+                    name: "Vehicle Detection with YOLOv8",
+
                     tools: "Python, YOLOv8, OpenCV, Ultralytics, Streamlit",
+
                     description: "Trained a custom YOLOv8 object detection model on aerial drone footage (VisDrone dataset) to detect cars, buses, and trucks. Built a real-time video-processing pipeline using Python, OpenCV, and Ultralytics for frame-by-frame inference. Deployed the model using Streamlit on Hugging Face Spaces.",
-                    github: "https://github.com/Kaung31/YOLOv8-Vehicle-Detector", live: null
+
+                    github: "https://github.com/Kaung31/vehicle_detection" /* Change this to your actual file name if you upload one for this project */
+
                 },
-                { 
-                    name: "Localization & Mapping with ROS", 
-                    tools: "ROS, Gazebo, MATLAB, EKF, Particle Filter", 
+
+                {
+
+                    name: "Localization & Mapping with ROS",
+
+                    tools: "ROS, Gazebo, MATLAB, EKF, Particle Filter",
+
                     description: "Developed a MATLAB-based control system for TurtleBot3 navigation in ROS/Gazebo, applying velocity motion models and occupancy grid mapping. Implemented EKF and Particle Filter algorithms to fuse LIDAR and odometry data for accurate autonomous localization.",
-                    github: null, live: null 
+
+                    github: "https://github.com/Kaung31/Localization-Motion-Models-ROS-MATLAB-" /* Change this to your actual file name if you upload one for this project */
+
                 },
-                { 
-                    name: "AL5D Robotic Arm Automation", 
+
+                {
+
+                    name: "AL5D Robotic Arm Automation",
+
                     tools: "Arduino, C++",
+
                     description: "Designed a robotic arm control system using Arduino, joysticks, button pins, and LEDs for test tube handling. Programmed precise pick-and-place operations, achieving reliable and repeatable test tube transfers between racks.",
-                    github: "https://github.com/Kaung31/AL5D-Arm-Control", live: null
+
                 },
-                { 
-                    name: "Micromouse Robotics Challenge", 
-                    tools: "STM32, C++, DFS, Flood Fill", 
-                    description: "Designed and implemented a maze-solving algorithm using DFS-based exploration and Flood Fill for shortest path computation on STM32. Focused on algorithm development within the team, ensuring adaptability and optimizing speed.", 
-                    github: null, live: null 
+
+                {
+
+                    name: "NAO Robot for a Bubble Tea Shop",
+
+                    tools: "Choregraphe, Python, Socket Server",
+
+                    description: "Programmed a NAO robot using Choregraphe, Python, and a socket server to handle customer orders with speech recognition and gesture-based dialogue. Simulated real-world service by automating payment prompts and creating an engaging, interactive customer experience.",
+
+                    github: "https://github.com/Kaung31/NAO_BubbleTeaBot",
+
                 },
+
+                {
+
+                    name: "Micromouse Robotics Challenge",
+
+                    tools: "STM32, C++, DFS, Flood Fill",
+
+                    description: "Designed and implemented a maze-solving algorithm using DFS-based exploration and Flood Fill for shortest path computation on STM32. Focused on algorithm development within the team, ensuring adaptability and optimizing speed.",
+
+                   
+
+                },
+
             ],
+
             skills: {
+
                 "Programming": [
+
                     { name: "Python", proficiency: 90 },
+
                     { name: "C++", proficiency: 85 },
+
                     { name: "MATLAB", proficiency: 70 }
+
                 ],
+
                 "Robotics & ROS": [
+
                     { name: "ROS", proficiency: 85 },
+
                     { name: "Gazebo", proficiency: 80 },
+
                     { name: "STM32/Arduino", proficiency: 75 }
+
                 ],
+
                 "Perception & Vision": [
+
                     { name: "OpenCV", proficiency: 80 },
+
                     { name: "Computer Vision", proficiency: 75 },
+
                     { name: "Sensor Fusion", proficiency: 70 }
+
                 ],
+
             },
+
             certs: [
+
                 "BEng (Hons) Robotics Engineering, University of West of England (First Class Honours)",
+
                 "Grade 10 (Myanmar) — 3 Distinctions: Maths, Physics, Chemistry"
+
             ]
+
         };
+
+
 
         const dataAnalystData = {
             summary: "First Class Honours Engineering graduate with a strong focus on data analytics. Proficient in SQL, Python, Power BI, and Tableau for cleaning data, building dashboards, and drawing out key insights. Focused on turning complex data into clear, actionable findings to support data-driven decisions.",
