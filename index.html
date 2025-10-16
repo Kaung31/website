@@ -126,7 +126,7 @@
     .hero-btn:hover {
       transform: scale(1.05);
       opacity: 0.9;
-      background: var(--accent-blue);
+      background: #2d333b;
     }
     .hero-btn.active {
       background: var(--accent-blue);
@@ -488,21 +488,44 @@
         }
 
         function renderProjects(data) {
-            return data.projects.map((p, index) => `
-                <div class="card project-card">
-                    <div class="project-header" data-project-index="${index}">
-                        <h3 class="project-title">${p.name}</h3>
-                        <i class="project-toggle-icon" data-lucide="chevron-down"></i>
-                    </div>
-                    <div class="project-content" data-content-index="${index}">
-                        <p style="color: var(--text-muted);">${p.description}</p>
-                        <p><strong>Tools Used:</strong> ${p.tools}</p>
-                        <div class="project-links">
-                            ${p.github ? `<a href="${p.github}" target="_blank"><i data-lucide="github" style="width: 16px; height: 16px;"></i> GitHub Repo</a>` : ''}
-                            ${p.live ? `<a href="${p.live}" target="_blank"><i data-lucide="external-link" style="width: 16px; height: 16px;"></i> Live Demo/Dashboard</a>` : ''}
+            return data.projects.map((p, index) => {
+                let mediaContent = '';
+                
+                // This if condition checks if the project data has an 'image_url' property set.
+                if (p.image_url) {
+                    mediaContent = `
+                        <div class="project-media-container">
+                            <!-- The image source 'src' is set to your uploaded file name (e.g., bristol_airbnb_dashboard.png) -->
+                            <img src="${p.image_url}" alt="Screenshot of ${p.name} Project" onerror="this.src='https://placehold.co/600x300/171923/E2E8F0?text=Image+Missing';">
+                            <p style="text-align: center; font-style: italic; color: var(--text-muted); font-size: 0.85rem; padding-top: 5px;">Static Screenshot: ${p.image_url}</p>
                         </div>
-                    </div>
-                </div>`).join("");
+                    `;
+                } else if (p.live_embed_url) {
+                    // This block is for if you wanted to embed a live interactive dashboard via iframe (we are not using this now).
+                    mediaContent = `
+                        <div class="project-media-container">
+                            <iframe 
+                                src="${p.live_embed_url}" 
+                                frameborder="0" 
+                                allowfullscreen="true" 
+                                mozallowfullscreen="true" 
+                                webkitallowfullscreen="true">
+                            </iframe>
+                            <p style="text-align: center; font-style: italic; color: var(--text-muted); font-size: 0.85rem; padding-top: 5px;">Interactive Dashboard Embed</p>
+                        </div>
+                    `;
+                }
+
+                // ... rest of the function continues below ...
+                return `
+                    <div class="card project-card">
+                        <!-- ... header content ... -->
+                        <div class="project-content" data-content-index="${index}">
+                            <!-- ... project details and links ... -->
+                            ${mediaContent} <!-- This line inserts the image/dashboard into the expanded view -->
+                        </div>
+                    </div>`;
+            }).join("");
         }
 
         function renderCerts(data) {
