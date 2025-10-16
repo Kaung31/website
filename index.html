@@ -342,162 +342,98 @@
   </footer>
     
     <script>
-
         // --- DATA STRUCTURES ---
-
         const roboticsData = {
-
             summary: "Robotics Engineer (BEng, First Class Honours) with hands-on experience in ROS, STM32, and C++ for real-time robotic applications. Skilled in robot perception, autonomous navigation, and control systems. Passionate about solving real-world problems through intelligent robotics and computer vision.",
-
             projects: [
-
-                {
-
-                    name: "Driver Fatigue Detection",
-
-                    tools: "Python, MediaPipe, OpenCV, EAR/MAR",
-
+                { 
+                    name: "Driver Fatigue Detection", 
+                    tools: "Python, MediaPipe, OpenCV, EAR/MAR", 
                     description: "Developed a real-time driver fatigue detection system using MediaPipe Face Mesh, EAR, MAR, and blink/yawn detection. Implemented adaptive thresholding based on head pose and lighting conditions, achieving 98% accuracy without glasses. (Undergraduate Research Thesis)",
-
                     github: "https://github.com/Kaung31/thesis-fatigue-detection" /* Change this to your actual file name if you upload one for this project */
-
                 },
-
-                {
-
-                    name: "Vehicle Detection with YOLOv8",
-
+                { 
+                    name: "Vehicle Detection with YOLOv8", 
                     tools: "Python, YOLOv8, OpenCV, Ultralytics, Streamlit",
-
                     description: "Trained a custom YOLOv8 object detection model on aerial drone footage (VisDrone dataset) to detect cars, buses, and trucks. Built a real-time video-processing pipeline using Python, OpenCV, and Ultralytics for frame-by-frame inference. Deployed the model using Streamlit on Hugging Face Spaces.",
-
                     github: "https://github.com/Kaung31/vehicle_detection" /* Change this to your actual file name if you upload one for this project */
-
                 },
-
-                {
-
-                    name: "Localization & Mapping with ROS",
-
-                    tools: "ROS, Gazebo, MATLAB, EKF, Particle Filter",
-
+                { 
+                    name: "Localization & Mapping with ROS", 
+                    tools: "ROS, Gazebo, MATLAB, EKF, Particle Filter", 
                     description: "Developed a MATLAB-based control system for TurtleBot3 navigation in ROS/Gazebo, applying velocity motion models and occupancy grid mapping. Implemented EKF and Particle Filter algorithms to fuse LIDAR and odometry data for accurate autonomous localization.",
-
                     github: "https://github.com/Kaung31/Localization-Motion-Models-ROS-MATLAB-" /* Change this to your actual file name if you upload one for this project */
-
                 },
-
-                {
-
-                    name: "AL5D Robotic Arm Automation",
-
+                { 
+                    name: "AL5D Robotic Arm Automation", 
                     tools: "Arduino, C++",
-
                     description: "Designed a robotic arm control system using Arduino, joysticks, button pins, and LEDs for test tube handling. Programmed precise pick-and-place operations, achieving reliable and repeatable test tube transfers between racks.",
-
                 },
-
-                {
-
-                    name: "NAO Robot for a Bubble Tea Shop",
-
-                    tools: "Choregraphe, Python, Socket Server",
-
+                { 
+                    name: "NAO Robot for a Bubble Tea Shop", 
+                    tools: "Choregraphe, Python, Socket Server", 
                     description: "Programmed a NAO robot using Choregraphe, Python, and a socket server to handle customer orders with speech recognition and gesture-based dialogue. Simulated real-world service by automating payment prompts and creating an engaging, interactive customer experience.",
-
                     github: "https://github.com/Kaung31/NAO_BubbleTeaBot",
-
                 },
-
-                {
-
-                    name: "Micromouse Robotics Challenge",
-
-                    tools: "STM32, C++, DFS, Flood Fill",
-
-                    description: "Designed and implemented a maze-solving algorithm using DFS-based exploration and Flood Fill for shortest path computation on STM32. Focused on algorithm development within the team, ensuring adaptability and optimizing speed.",
-
+                { 
+                    name: "Micromouse Robotics Challenge", 
+                    tools: "STM32, C++, DFS, Flood Fill", 
+                    description: "Designed and implemented a maze-solving algorithm using DFS-based exploration and Flood Fill for shortest path computation on STM32. Focused on algorithm development within the team, ensuring adaptability and optimizing speed.", 
                    
-
                 },
-
             ],
-
             skills: {
-
                 "Programming": [
-
                     { name: "Python", proficiency: 90 },
-
                     { name: "C++", proficiency: 85 },
-
                     { name: "MATLAB", proficiency: 70 }
-
                 ],
-
                 "Robotics & ROS": [
-
                     { name: "ROS", proficiency: 85 },
-
                     { name: "Gazebo", proficiency: 80 },
-
                     { name: "STM32/Arduino", proficiency: 75 }
-
                 ],
-
                 "Perception & Vision": [
-
                     { name: "OpenCV", proficiency: 80 },
-
                     { name: "Computer Vision", proficiency: 75 },
-
                     { name: "Sensor Fusion", proficiency: 70 }
-
                 ],
-
             },
-
             certs: [
-
                 "BEng (Hons) Robotics Engineering, University of West of England (First Class Honours)",
-
                 "Grade 10 (Myanmar) — 3 Distinctions: Maths, Physics, Chemistry"
-
             ]
-
         };
-
-
 
         const dataAnalystData = {
             summary: "First Class Honours Engineering graduate with a strong focus on data analytics. Proficient in SQL, Python, Power BI, and Tableau for cleaning data, building dashboards, and drawing out key insights. Focused on turning complex data into clear, actionable findings to support data-driven decisions.",
-            cv: "DATA_ANALYST_CV.pdf",
             projects: [
                 { 
                     name: "Bristol Airbnb Market Analysis", 
                     tools: "SQL, Power BI, Tableau, Excel, R",
                     description: "Analyzed the Bristol Airbnb market to identify pricing trends and demand drivers. Used SQL for data extraction and cleaning, and leveraged Power BI/Tableau to build interactive dashboards. Delivered actionable insights, revealing high-demand areas and seasonal price influence.",
                     github: "https://github.com/Kaung31/Bristol-Airbnb-Analysis",
-                    live: "https://public.tableau.com/views/BristolAirbnbAnalysis/Dashboard"
-                },
-                { 
-                    name: "E-commerce Customer Behavior Analysis", 
-                    tools: "Python, SQL (PostgreSQL), Tableau, Apriori",
-                    description: "Developed an end-to-end data pipeline using Python and SQL (PostgreSQL) to process over 390,000 transactional records. Conducted RFM analysis to segment 4,000+ customers into key behavioral groups. Built a product recommendation engine (Apriori algorithm).",
-                    github: null, live: null 
+                    image_url: "bristol_airbnb_dashboard.png" 
                 },
                 { 
                     name: "Global Superstore Analytics", 
                     tools: "SQL, Power BI, DAX, Excel",
                     description: "Modeled a large retail order dataset and designed a star schema. Used SQL to query KPIs and built a professional Power BI dashboard using DAX measures. Provided data-driven recommendations showing APAC and US regions drive the most revenue.",
-                    github: "https://github.com/Kaung31/Superstore-Dashboard",
-                    live: "https://app.powerbi.com/view?r=ey..."
+                    github: "https://github.com/Kaung31/global-superstore-analytics",
+                    image_url: "superstore_dashboard.png" 
+                },
+                { 
+                    name: "E-commerce Customer Behavior Analysis", 
+                    tools: "Python, SQL (PostgreSQL), Tableau, Apriori",
+                    description: "Developed an end-to-end data pipeline using Python and SQL (PostgreSQL) to process over 390,000 transactional records. Conducted RFM analysis to segment 4,000+ customers into key behavioral groups. Built a product recommendation engine (Apriori algorithm).",
+                    github: "https://github.com/Kaung31/ecommerce-customer-analysis"
+                  
                 },
                 { 
                     name: "House Price Forecasting", 
                     tools: "Python, Scikit-learn, XGBoost, Random Forest",
                     description: "Trained XGBoost, Random Forest, and Linear Regression models to forecast 2024 Bristol house prices using historical data. Achieved ~£156K MAE on 2024 predictions across 30+ postcode areas, tuning models with cross-validation.",
-                    github: "https://github.com/Kaung31/House-Price-Forecasting", live: null 
+                    github: "https://github.com/Kaung31/bristol_house_price_prediction", 
                 },
             ],
             skills: {
