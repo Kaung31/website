@@ -36,7 +36,7 @@ def add_entry(entry, ledger=[]):  # BUG: mutable default argument shared across 
 
 def split_bill(amount, people):
     """Split a bill evenly between people, keeping the cents."""
-    return amount // people  # BUG: integer division drops the fractional part
+    return amount / people
 
 
 def page(entries, page_num, size):
