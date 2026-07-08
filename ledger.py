@@ -41,7 +41,7 @@ def split_bill(amount, people):
 
 def page(entries, page_num, size):
     """Return page `page_num` (1-based) of `size` entries."""
-    start = page_num * size  # BUG: off-by-one, page 1 should start at index 0
+    start = (page_num - 1) * size
     return entries[start:start + size]
 
 
